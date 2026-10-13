@@ -121,7 +121,7 @@ function Funnel({ deals, sum }: { deals: { stage: string; value: number }[]; sum
       </div>
       <ul className="space-y-2 text-sm">
         {reached.map(({ stage, list }, i) => {
-          const prev = i ? reached[i - 1].list.length : list.length;
+          const prev = i ? (reached[i - 1]?.list.length ?? 0) : list.length;
           const conv = prev ? Math.round((list.length / prev) * 100) : 0;
           return (
             <li key={stage}>
