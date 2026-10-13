@@ -64,6 +64,7 @@ function ReportsPage() {
         <Breakdown title="By stage" rows={STAGES.map((s) => [STAGE_LABELS[s] ?? s, deals.filter((d) => d.stage === s)])} sum={sum} />
         <Breakdown title="By pipeline" rows={PIPELINES.map((p) => [PIPELINE_LABELS[p] ?? p, deals.filter((d) => d.pipeline === p)])} sum={sum} />
       </div>
+      <Funnel deals={deals} sum={sum} />
       {canSeeAll(roles) && (
         <section className="rounded-lg border bg-card p-4">
           <h2 className="mb-3 text-lg font-semibold text-foreground">Manager view — team performance</h2>
