@@ -6,6 +6,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { fetchMyRoles } from "@/lib/admin";
 import { DealFollowup, DealQuotes, DealTimeline } from "@/frontend/features/crm/deal-extras";
+import { AiFollowup } from "@/frontend/features/crm/ai-followup";
 import { fetchPeople, logActivity, inr, isManager, PIPELINE_LABELS, PIPELINES, STAGE_LABELS, STAGES, type Deal } from "@/lib/crm";
 
 export const Route = createFileRoute("/_authenticated/admin/deals/$id")({
@@ -103,6 +104,7 @@ function DealPage() {
         <div className="sm:col-span-3"><Button onClick={save}>Save changes</Button></div>
       </div>
       <DealFollowup key={deal.data.updated_at} deal={deal.data} />
+      <AiFollowup dealId={id} />
       <DealTimeline dealId={id} people={people} />
       <DealQuotes deal={deal.data} />
       <section className="rounded-lg border bg-card p-4">
