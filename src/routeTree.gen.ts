@@ -10,33 +10,744 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as AdvertiseYourProductRouteImport } from './routes/advertise-your-product'
+import { Route as AuthRouteImport } from './routes/auth'
+import { Route as BusinessValuationCalculatorRouteImport } from './routes/business-valuation-calculator'
+import { Route as BusinessValuationReportRouteImport } from './routes/business-valuation-report'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as DisclaimerRouteImport } from './routes/disclaimer'
+import { Route as FaqRouteImport } from './routes/faq'
+import { Route as FundYourBusinessRouteImport } from './routes/fund-your-business'
+import { Route as FundYourStartupRouteImport } from './routes/fund-your-startup'
+import { Route as FundingProgrammeRouteImport } from './routes/funding-programme'
+import { Route as GlobalPresenceRouteImport } from './routes/global-presence'
+import { Route as ManufacturersRouteImport } from './routes/manufacturers'
+import { Route as OurServicesRouteImport } from './routes/our-services'
+import { Route as PartnerWithUsRouteImport } from './routes/partner-with-us'
+import { Route as PaymentRouteImport } from './routes/payment'
+import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
+import { Route as RegisterYourStoreRouteImport } from './routes/register-your-store'
+import { Route as RetailerPartnerRouteImport } from './routes/retailer-partner'
+import { Route as ScaleYourStartupRouteImport } from './routes/scale-your-startup'
+import { Route as SitemapRouteImport } from './routes/sitemap'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as StartupWithRiplRouteImport } from './routes/startup-with-ripl'
+import { Route as StoreListRouteImport } from './routes/store-list'
+import { Route as TermsRouteImport } from './routes/terms'
+import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
+import { Route as AuthenticatedOurInvestorsRouteImport } from './routes/_authenticated/our-investors'
+import { Route as AuthenticatedOurMentorsRouteImport } from './routes/_authenticated/our-mentors'
+import { Route as AuthenticatedOurTeamRouteImport } from './routes/_authenticated/our-team'
+import { Route as AuthenticatedPartnerRouteImport } from './routes/_authenticated/partner'
+import { Route as AuthenticatedPortalRouteImport } from './routes/_authenticated/portal'
+import { Route as ApiChatRouteImport } from './routes/api/chat'
+import { Route as GlobalPresenceMarketRouteImport } from './routes/global-presence.$market'
+import { Route as OurServicesServiceIdRouteImport } from './routes/our-services_.$serviceId'
+import { Route as AuthenticatedAdminIndexRouteImport } from './routes/_authenticated/admin.index'
+import { Route as AuthenticatedAdminContactsRouteImport } from './routes/_authenticated/admin.contacts'
+import { Route as AuthenticatedAdminContentRouteImport } from './routes/_authenticated/admin.content'
+import { Route as AuthenticatedAdminCrmRouteImport } from './routes/_authenticated/admin.crm'
+import { Route as AuthenticatedAdminFollowupsRouteImport } from './routes/_authenticated/admin.followups'
+import { Route as AuthenticatedAdminPeopleRouteImport } from './routes/_authenticated/admin.people'
+import { Route as AuthenticatedAdminProgrammeRouteImport } from './routes/_authenticated/admin.programme'
+import { Route as AuthenticatedAdminReportsRouteImport } from './routes/_authenticated/admin.reports'
+import { Route as AuthenticatedAdminRoutingRouteImport } from './routes/_authenticated/admin.routing'
+import { Route as AuthenticatedAdminStoresRouteImport } from './routes/_authenticated/admin.stores'
+import { Route as AuthenticatedAdminTargetsRouteImport } from './routes/_authenticated/admin.targets'
+import { Route as AuthenticatedAdminUsersRouteImport } from './routes/_authenticated/admin.users'
+import { Route as AuthenticatedOurInvestorsIndexRouteImport } from './routes/_authenticated/our-investors.index'
+import { Route as AuthenticatedOurInvestorsSlugRouteImport } from './routes/_authenticated/our-investors.$slug'
+import { Route as AuthenticatedOurMentorsIndexRouteImport } from './routes/_authenticated/our-mentors.index'
+import { Route as AuthenticatedOurMentorsSlugRouteImport } from './routes/_authenticated/our-mentors.$slug'
+import { Route as AuthenticatedOurTeamIndexRouteImport } from './routes/_authenticated/our-team.index'
+import { Route as AuthenticatedOurTeamSlugRouteImport } from './routes/_authenticated/our-team.$slug'
+import { Route as AuthenticatedAdminDealsIdRouteImport } from './routes/_authenticated/admin.deals.$id'
+import { Route as AuthenticatedAdminLeadsIdRouteImport } from './routes/_authenticated/admin.leads.$id'
+import { Route as AuthenticatedAdminQuotesIdRouteImport } from './routes/_authenticated/admin.quotes.$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
+  id: '/_authenticated',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdvertiseYourProductRoute = AdvertiseYourProductRouteImport.update({
+  id: '/advertise-your-product',
+  path: '/advertise-your-product',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BusinessValuationCalculatorRoute =
+  BusinessValuationCalculatorRouteImport.update({
+    id: '/business-valuation-calculator',
+    path: '/business-valuation-calculator',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const BusinessValuationReportRoute = BusinessValuationReportRouteImport.update({
+  id: '/business-valuation-report',
+  path: '/business-valuation-report',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DisclaimerRoute = DisclaimerRouteImport.update({
+  id: '/disclaimer',
+  path: '/disclaimer',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FundYourBusinessRoute = FundYourBusinessRouteImport.update({
+  id: '/fund-your-business',
+  path: '/fund-your-business',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FundYourStartupRoute = FundYourStartupRouteImport.update({
+  id: '/fund-your-startup',
+  path: '/fund-your-startup',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FundingProgrammeRoute = FundingProgrammeRouteImport.update({
+  id: '/funding-programme',
+  path: '/funding-programme',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GlobalPresenceRoute = GlobalPresenceRouteImport.update({
+  id: '/global-presence',
+  path: '/global-presence',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ManufacturersRoute = ManufacturersRouteImport.update({
+  id: '/manufacturers',
+  path: '/manufacturers',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OurServicesRoute = OurServicesRouteImport.update({
+  id: '/our-services',
+  path: '/our-services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PartnerWithUsRoute = PartnerWithUsRouteImport.update({
+  id: '/partner-with-us',
+  path: '/partner-with-us',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PaymentRoute = PaymentRouteImport.update({
+  id: '/payment',
+  path: '/payment',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
+  id: '/privacy-policy',
+  path: '/privacy-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RegisterYourStoreRoute = RegisterYourStoreRouteImport.update({
+  id: '/register-your-store',
+  path: '/register-your-store',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RetailerPartnerRoute = RetailerPartnerRouteImport.update({
+  id: '/retailer-partner',
+  path: '/retailer-partner',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ScaleYourStartupRoute = ScaleYourStartupRouteImport.update({
+  id: '/scale-your-startup',
+  path: '/scale-your-startup',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapRoute = SitemapRouteImport.update({
+  id: '/sitemap',
+  path: '/sitemap',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StartupWithRiplRoute = StartupWithRiplRouteImport.update({
+  id: '/startup-with-ripl',
+  path: '/startup-with-ripl',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StoreListRoute = StoreListRouteImport.update({
+  id: '/store-list',
+  path: '/store-list',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthenticatedAdminRoute = AuthenticatedAdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedOurInvestorsRoute =
+  AuthenticatedOurInvestorsRouteImport.update({
+    id: '/our-investors',
+    path: '/our-investors',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedOurMentorsRoute = AuthenticatedOurMentorsRouteImport.update({
+  id: '/our-mentors',
+  path: '/our-mentors',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedOurTeamRoute = AuthenticatedOurTeamRouteImport.update({
+  id: '/our-team',
+  path: '/our-team',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedPartnerRoute = AuthenticatedPartnerRouteImport.update({
+  id: '/partner',
+  path: '/partner',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedPortalRoute = AuthenticatedPortalRouteImport.update({
+  id: '/portal',
+  path: '/portal',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const ApiChatRoute = ApiChatRouteImport.update({
+  id: '/api/chat',
+  path: '/api/chat',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GlobalPresenceMarketRoute = GlobalPresenceMarketRouteImport.update({
+  id: '/$market',
+  path: '/$market',
+  getParentRoute: () => GlobalPresenceRoute,
+} as any)
+const OurServicesServiceIdRoute = OurServicesServiceIdRouteImport.update({
+  id: '/our-services_/$serviceId',
+  path: '/our-services/$serviceId',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthenticatedAdminIndexRoute = AuthenticatedAdminIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AuthenticatedAdminRoute,
+} as any)
+const AuthenticatedAdminContactsRoute =
+  AuthenticatedAdminContactsRouteImport.update({
+    id: '/contacts',
+    path: '/contacts',
+    getParentRoute: () => AuthenticatedAdminRoute,
+  } as any)
+const AuthenticatedAdminContentRoute =
+  AuthenticatedAdminContentRouteImport.update({
+    id: '/content',
+    path: '/content',
+    getParentRoute: () => AuthenticatedAdminRoute,
+  } as any)
+const AuthenticatedAdminCrmRoute = AuthenticatedAdminCrmRouteImport.update({
+  id: '/crm',
+  path: '/crm',
+  getParentRoute: () => AuthenticatedAdminRoute,
+} as any)
+const AuthenticatedAdminFollowupsRoute =
+  AuthenticatedAdminFollowupsRouteImport.update({
+    id: '/followups',
+    path: '/followups',
+    getParentRoute: () => AuthenticatedAdminRoute,
+  } as any)
+const AuthenticatedAdminPeopleRoute =
+  AuthenticatedAdminPeopleRouteImport.update({
+    id: '/people',
+    path: '/people',
+    getParentRoute: () => AuthenticatedAdminRoute,
+  } as any)
+const AuthenticatedAdminProgrammeRoute =
+  AuthenticatedAdminProgrammeRouteImport.update({
+    id: '/programme',
+    path: '/programme',
+    getParentRoute: () => AuthenticatedAdminRoute,
+  } as any)
+const AuthenticatedAdminReportsRoute =
+  AuthenticatedAdminReportsRouteImport.update({
+    id: '/reports',
+    path: '/reports',
+    getParentRoute: () => AuthenticatedAdminRoute,
+  } as any)
+const AuthenticatedAdminRoutingRoute =
+  AuthenticatedAdminRoutingRouteImport.update({
+    id: '/routing',
+    path: '/routing',
+    getParentRoute: () => AuthenticatedAdminRoute,
+  } as any)
+const AuthenticatedAdminStoresRoute =
+  AuthenticatedAdminStoresRouteImport.update({
+    id: '/stores',
+    path: '/stores',
+    getParentRoute: () => AuthenticatedAdminRoute,
+  } as any)
+const AuthenticatedAdminTargetsRoute =
+  AuthenticatedAdminTargetsRouteImport.update({
+    id: '/targets',
+    path: '/targets',
+    getParentRoute: () => AuthenticatedAdminRoute,
+  } as any)
+const AuthenticatedAdminUsersRoute = AuthenticatedAdminUsersRouteImport.update({
+  id: '/users',
+  path: '/users',
+  getParentRoute: () => AuthenticatedAdminRoute,
+} as any)
+const AuthenticatedOurInvestorsIndexRoute =
+  AuthenticatedOurInvestorsIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => AuthenticatedOurInvestorsRoute,
+  } as any)
+const AuthenticatedOurInvestorsSlugRoute =
+  AuthenticatedOurInvestorsSlugRouteImport.update({
+    id: '/$slug',
+    path: '/$slug',
+    getParentRoute: () => AuthenticatedOurInvestorsRoute,
+  } as any)
+const AuthenticatedOurMentorsIndexRoute =
+  AuthenticatedOurMentorsIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => AuthenticatedOurMentorsRoute,
+  } as any)
+const AuthenticatedOurMentorsSlugRoute =
+  AuthenticatedOurMentorsSlugRouteImport.update({
+    id: '/$slug',
+    path: '/$slug',
+    getParentRoute: () => AuthenticatedOurMentorsRoute,
+  } as any)
+const AuthenticatedOurTeamIndexRoute =
+  AuthenticatedOurTeamIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => AuthenticatedOurTeamRoute,
+  } as any)
+const AuthenticatedOurTeamSlugRoute =
+  AuthenticatedOurTeamSlugRouteImport.update({
+    id: '/$slug',
+    path: '/$slug',
+    getParentRoute: () => AuthenticatedOurTeamRoute,
+  } as any)
+const AuthenticatedAdminDealsIdRoute =
+  AuthenticatedAdminDealsIdRouteImport.update({
+    id: '/deals/$id',
+    path: '/deals/$id',
+    getParentRoute: () => AuthenticatedAdminRoute,
+  } as any)
+const AuthenticatedAdminLeadsIdRoute =
+  AuthenticatedAdminLeadsIdRouteImport.update({
+    id: '/leads/$id',
+    path: '/leads/$id',
+    getParentRoute: () => AuthenticatedAdminRoute,
+  } as any)
+const AuthenticatedAdminQuotesIdRoute =
+  AuthenticatedAdminQuotesIdRouteImport.update({
+    id: '/quotes/$id',
+    path: '/quotes/$id',
+    getParentRoute: () => AuthenticatedAdminRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/advertise-your-product': typeof AdvertiseYourProductRoute
+  '/auth': typeof AuthRoute
+  '/business-valuation-calculator': typeof BusinessValuationCalculatorRoute
+  '/business-valuation-report': typeof BusinessValuationReportRoute
+  '/contact': typeof ContactRoute
+  '/disclaimer': typeof DisclaimerRoute
+  '/faq': typeof FaqRoute
+  '/fund-your-business': typeof FundYourBusinessRoute
+  '/fund-your-startup': typeof FundYourStartupRoute
+  '/funding-programme': typeof FundingProgrammeRoute
+  '/global-presence': typeof GlobalPresenceRouteWithChildren
+  '/manufacturers': typeof ManufacturersRoute
+  '/our-services': typeof OurServicesRoute
+  '/partner-with-us': typeof PartnerWithUsRoute
+  '/payment': typeof PaymentRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/register-your-store': typeof RegisterYourStoreRoute
+  '/retailer-partner': typeof RetailerPartnerRoute
+  '/scale-your-startup': typeof ScaleYourStartupRoute
+  '/sitemap': typeof SitemapRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/startup-with-ripl': typeof StartupWithRiplRoute
+  '/store-list': typeof StoreListRoute
+  '/terms': typeof TermsRoute
+  '/admin': typeof AuthenticatedAdminRouteWithChildren
+  '/our-investors': typeof AuthenticatedOurInvestorsRouteWithChildren
+  '/our-mentors': typeof AuthenticatedOurMentorsRouteWithChildren
+  '/our-team': typeof AuthenticatedOurTeamRouteWithChildren
+  '/partner': typeof AuthenticatedPartnerRoute
+  '/portal': typeof AuthenticatedPortalRoute
+  '/api/chat': typeof ApiChatRoute
+  '/global-presence/$market': typeof GlobalPresenceMarketRoute
+  '/our-services/$serviceId': typeof OurServicesServiceIdRoute
+  '/admin/contacts': typeof AuthenticatedAdminContactsRoute
+  '/admin/content': typeof AuthenticatedAdminContentRoute
+  '/admin/crm': typeof AuthenticatedAdminCrmRoute
+  '/admin/followups': typeof AuthenticatedAdminFollowupsRoute
+  '/admin/people': typeof AuthenticatedAdminPeopleRoute
+  '/admin/programme': typeof AuthenticatedAdminProgrammeRoute
+  '/admin/reports': typeof AuthenticatedAdminReportsRoute
+  '/admin/routing': typeof AuthenticatedAdminRoutingRoute
+  '/admin/stores': typeof AuthenticatedAdminStoresRoute
+  '/admin/targets': typeof AuthenticatedAdminTargetsRoute
+  '/admin/users': typeof AuthenticatedAdminUsersRoute
+  '/our-investors/$slug': typeof AuthenticatedOurInvestorsSlugRoute
+  '/our-mentors/$slug': typeof AuthenticatedOurMentorsSlugRoute
+  '/our-team/$slug': typeof AuthenticatedOurTeamSlugRoute
+  '/admin/': typeof AuthenticatedAdminIndexRoute
+  '/our-investors/': typeof AuthenticatedOurInvestorsIndexRoute
+  '/our-mentors/': typeof AuthenticatedOurMentorsIndexRoute
+  '/our-team/': typeof AuthenticatedOurTeamIndexRoute
+  '/admin/deals/$id': typeof AuthenticatedAdminDealsIdRoute
+  '/admin/leads/$id': typeof AuthenticatedAdminLeadsIdRoute
+  '/admin/quotes/$id': typeof AuthenticatedAdminQuotesIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/advertise-your-product': typeof AdvertiseYourProductRoute
+  '/auth': typeof AuthRoute
+  '/business-valuation-calculator': typeof BusinessValuationCalculatorRoute
+  '/business-valuation-report': typeof BusinessValuationReportRoute
+  '/contact': typeof ContactRoute
+  '/disclaimer': typeof DisclaimerRoute
+  '/faq': typeof FaqRoute
+  '/fund-your-business': typeof FundYourBusinessRoute
+  '/fund-your-startup': typeof FundYourStartupRoute
+  '/funding-programme': typeof FundingProgrammeRoute
+  '/global-presence': typeof GlobalPresenceRouteWithChildren
+  '/manufacturers': typeof ManufacturersRoute
+  '/our-services': typeof OurServicesRoute
+  '/partner-with-us': typeof PartnerWithUsRoute
+  '/payment': typeof PaymentRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/register-your-store': typeof RegisterYourStoreRoute
+  '/retailer-partner': typeof RetailerPartnerRoute
+  '/scale-your-startup': typeof ScaleYourStartupRoute
+  '/sitemap': typeof SitemapRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/startup-with-ripl': typeof StartupWithRiplRoute
+  '/store-list': typeof StoreListRoute
+  '/terms': typeof TermsRoute
+  '/partner': typeof AuthenticatedPartnerRoute
+  '/portal': typeof AuthenticatedPortalRoute
+  '/api/chat': typeof ApiChatRoute
+  '/global-presence/$market': typeof GlobalPresenceMarketRoute
+  '/our-services/$serviceId': typeof OurServicesServiceIdRoute
+  '/admin/contacts': typeof AuthenticatedAdminContactsRoute
+  '/admin/content': typeof AuthenticatedAdminContentRoute
+  '/admin/crm': typeof AuthenticatedAdminCrmRoute
+  '/admin/followups': typeof AuthenticatedAdminFollowupsRoute
+  '/admin/people': typeof AuthenticatedAdminPeopleRoute
+  '/admin/programme': typeof AuthenticatedAdminProgrammeRoute
+  '/admin/reports': typeof AuthenticatedAdminReportsRoute
+  '/admin/routing': typeof AuthenticatedAdminRoutingRoute
+  '/admin/stores': typeof AuthenticatedAdminStoresRoute
+  '/admin/targets': typeof AuthenticatedAdminTargetsRoute
+  '/admin/users': typeof AuthenticatedAdminUsersRoute
+  '/our-investors/$slug': typeof AuthenticatedOurInvestorsSlugRoute
+  '/our-mentors/$slug': typeof AuthenticatedOurMentorsSlugRoute
+  '/our-team/$slug': typeof AuthenticatedOurTeamSlugRoute
+  '/admin': typeof AuthenticatedAdminIndexRoute
+  '/our-investors': typeof AuthenticatedOurInvestorsIndexRoute
+  '/our-mentors': typeof AuthenticatedOurMentorsIndexRoute
+  '/our-team': typeof AuthenticatedOurTeamIndexRoute
+  '/admin/deals/$id': typeof AuthenticatedAdminDealsIdRoute
+  '/admin/leads/$id': typeof AuthenticatedAdminLeadsIdRoute
+  '/admin/quotes/$id': typeof AuthenticatedAdminQuotesIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
+  '/about': typeof AboutRoute
+  '/advertise-your-product': typeof AdvertiseYourProductRoute
+  '/auth': typeof AuthRoute
+  '/business-valuation-calculator': typeof BusinessValuationCalculatorRoute
+  '/business-valuation-report': typeof BusinessValuationReportRoute
+  '/contact': typeof ContactRoute
+  '/disclaimer': typeof DisclaimerRoute
+  '/faq': typeof FaqRoute
+  '/fund-your-business': typeof FundYourBusinessRoute
+  '/fund-your-startup': typeof FundYourStartupRoute
+  '/funding-programme': typeof FundingProgrammeRoute
+  '/global-presence': typeof GlobalPresenceRouteWithChildren
+  '/manufacturers': typeof ManufacturersRoute
+  '/our-services': typeof OurServicesRoute
+  '/partner-with-us': typeof PartnerWithUsRoute
+  '/payment': typeof PaymentRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/register-your-store': typeof RegisterYourStoreRoute
+  '/retailer-partner': typeof RetailerPartnerRoute
+  '/scale-your-startup': typeof ScaleYourStartupRoute
+  '/sitemap': typeof SitemapRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/startup-with-ripl': typeof StartupWithRiplRoute
+  '/store-list': typeof StoreListRoute
+  '/terms': typeof TermsRoute
+  '/_authenticated/admin': typeof AuthenticatedAdminRouteWithChildren
+  '/_authenticated/our-investors': typeof AuthenticatedOurInvestorsRouteWithChildren
+  '/_authenticated/our-mentors': typeof AuthenticatedOurMentorsRouteWithChildren
+  '/_authenticated/our-team': typeof AuthenticatedOurTeamRouteWithChildren
+  '/_authenticated/partner': typeof AuthenticatedPartnerRoute
+  '/_authenticated/portal': typeof AuthenticatedPortalRoute
+  '/api/chat': typeof ApiChatRoute
+  '/global-presence/$market': typeof GlobalPresenceMarketRoute
+  '/our-services_/$serviceId': typeof OurServicesServiceIdRoute
+  '/_authenticated/admin/contacts': typeof AuthenticatedAdminContactsRoute
+  '/_authenticated/admin/content': typeof AuthenticatedAdminContentRoute
+  '/_authenticated/admin/crm': typeof AuthenticatedAdminCrmRoute
+  '/_authenticated/admin/followups': typeof AuthenticatedAdminFollowupsRoute
+  '/_authenticated/admin/people': typeof AuthenticatedAdminPeopleRoute
+  '/_authenticated/admin/programme': typeof AuthenticatedAdminProgrammeRoute
+  '/_authenticated/admin/reports': typeof AuthenticatedAdminReportsRoute
+  '/_authenticated/admin/routing': typeof AuthenticatedAdminRoutingRoute
+  '/_authenticated/admin/stores': typeof AuthenticatedAdminStoresRoute
+  '/_authenticated/admin/targets': typeof AuthenticatedAdminTargetsRoute
+  '/_authenticated/admin/users': typeof AuthenticatedAdminUsersRoute
+  '/_authenticated/our-investors/$slug': typeof AuthenticatedOurInvestorsSlugRoute
+  '/_authenticated/our-mentors/$slug': typeof AuthenticatedOurMentorsSlugRoute
+  '/_authenticated/our-team/$slug': typeof AuthenticatedOurTeamSlugRoute
+  '/_authenticated/admin/': typeof AuthenticatedAdminIndexRoute
+  '/_authenticated/our-investors/': typeof AuthenticatedOurInvestorsIndexRoute
+  '/_authenticated/our-mentors/': typeof AuthenticatedOurMentorsIndexRoute
+  '/_authenticated/our-team/': typeof AuthenticatedOurTeamIndexRoute
+  '/_authenticated/admin/deals/$id': typeof AuthenticatedAdminDealsIdRoute
+  '/_authenticated/admin/leads/$id': typeof AuthenticatedAdminLeadsIdRoute
+  '/_authenticated/admin/quotes/$id': typeof AuthenticatedAdminQuotesIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/advertise-your-product'
+    | '/auth'
+    | '/business-valuation-calculator'
+    | '/business-valuation-report'
+    | '/contact'
+    | '/disclaimer'
+    | '/faq'
+    | '/fund-your-business'
+    | '/fund-your-startup'
+    | '/funding-programme'
+    | '/global-presence'
+    | '/manufacturers'
+    | '/our-services'
+    | '/partner-with-us'
+    | '/payment'
+    | '/privacy-policy'
+    | '/register-your-store'
+    | '/retailer-partner'
+    | '/scale-your-startup'
+    | '/sitemap'
+    | '/sitemap.xml'
+    | '/startup-with-ripl'
+    | '/store-list'
+    | '/terms'
+    | '/admin'
+    | '/our-investors'
+    | '/our-mentors'
+    | '/our-team'
+    | '/partner'
+    | '/portal'
+    | '/api/chat'
+    | '/global-presence/$market'
+    | '/our-services/$serviceId'
+    | '/admin/contacts'
+    | '/admin/content'
+    | '/admin/crm'
+    | '/admin/followups'
+    | '/admin/people'
+    | '/admin/programme'
+    | '/admin/reports'
+    | '/admin/routing'
+    | '/admin/stores'
+    | '/admin/targets'
+    | '/admin/users'
+    | '/our-investors/$slug'
+    | '/our-mentors/$slug'
+    | '/our-team/$slug'
+    | '/admin/'
+    | '/our-investors/'
+    | '/our-mentors/'
+    | '/our-team/'
+    | '/admin/deals/$id'
+    | '/admin/leads/$id'
+    | '/admin/quotes/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/advertise-your-product'
+    | '/auth'
+    | '/business-valuation-calculator'
+    | '/business-valuation-report'
+    | '/contact'
+    | '/disclaimer'
+    | '/faq'
+    | '/fund-your-business'
+    | '/fund-your-startup'
+    | '/funding-programme'
+    | '/global-presence'
+    | '/manufacturers'
+    | '/our-services'
+    | '/partner-with-us'
+    | '/payment'
+    | '/privacy-policy'
+    | '/register-your-store'
+    | '/retailer-partner'
+    | '/scale-your-startup'
+    | '/sitemap'
+    | '/sitemap.xml'
+    | '/startup-with-ripl'
+    | '/store-list'
+    | '/terms'
+    | '/partner'
+    | '/portal'
+    | '/api/chat'
+    | '/global-presence/$market'
+    | '/our-services/$serviceId'
+    | '/admin/contacts'
+    | '/admin/content'
+    | '/admin/crm'
+    | '/admin/followups'
+    | '/admin/people'
+    | '/admin/programme'
+    | '/admin/reports'
+    | '/admin/routing'
+    | '/admin/stores'
+    | '/admin/targets'
+    | '/admin/users'
+    | '/our-investors/$slug'
+    | '/our-mentors/$slug'
+    | '/our-team/$slug'
+    | '/admin'
+    | '/our-investors'
+    | '/our-mentors'
+    | '/our-team'
+    | '/admin/deals/$id'
+    | '/admin/leads/$id'
+    | '/admin/quotes/$id'
+  id:
+    | '__root__'
+    | '/'
+    | '/_authenticated'
+    | '/about'
+    | '/advertise-your-product'
+    | '/auth'
+    | '/business-valuation-calculator'
+    | '/business-valuation-report'
+    | '/contact'
+    | '/disclaimer'
+    | '/faq'
+    | '/fund-your-business'
+    | '/fund-your-startup'
+    | '/funding-programme'
+    | '/global-presence'
+    | '/manufacturers'
+    | '/our-services'
+    | '/partner-with-us'
+    | '/payment'
+    | '/privacy-policy'
+    | '/register-your-store'
+    | '/retailer-partner'
+    | '/scale-your-startup'
+    | '/sitemap'
+    | '/sitemap.xml'
+    | '/startup-with-ripl'
+    | '/store-list'
+    | '/terms'
+    | '/_authenticated/admin'
+    | '/_authenticated/our-investors'
+    | '/_authenticated/our-mentors'
+    | '/_authenticated/our-team'
+    | '/_authenticated/partner'
+    | '/_authenticated/portal'
+    | '/api/chat'
+    | '/global-presence/$market'
+    | '/our-services_/$serviceId'
+    | '/_authenticated/admin/contacts'
+    | '/_authenticated/admin/content'
+    | '/_authenticated/admin/crm'
+    | '/_authenticated/admin/followups'
+    | '/_authenticated/admin/people'
+    | '/_authenticated/admin/programme'
+    | '/_authenticated/admin/reports'
+    | '/_authenticated/admin/routing'
+    | '/_authenticated/admin/stores'
+    | '/_authenticated/admin/targets'
+    | '/_authenticated/admin/users'
+    | '/_authenticated/our-investors/$slug'
+    | '/_authenticated/our-mentors/$slug'
+    | '/_authenticated/our-team/$slug'
+    | '/_authenticated/admin/'
+    | '/_authenticated/our-investors/'
+    | '/_authenticated/our-mentors/'
+    | '/_authenticated/our-team/'
+    | '/_authenticated/admin/deals/$id'
+    | '/_authenticated/admin/leads/$id'
+    | '/_authenticated/admin/quotes/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
+  AboutRoute: typeof AboutRoute
+  AdvertiseYourProductRoute: typeof AdvertiseYourProductRoute
+  AuthRoute: typeof AuthRoute
+  BusinessValuationCalculatorRoute: typeof BusinessValuationCalculatorRoute
+  BusinessValuationReportRoute: typeof BusinessValuationReportRoute
+  ContactRoute: typeof ContactRoute
+  DisclaimerRoute: typeof DisclaimerRoute
+  FaqRoute: typeof FaqRoute
+  FundYourBusinessRoute: typeof FundYourBusinessRoute
+  FundYourStartupRoute: typeof FundYourStartupRoute
+  FundingProgrammeRoute: typeof FundingProgrammeRoute
+  GlobalPresenceRoute: typeof GlobalPresenceRouteWithChildren
+  ManufacturersRoute: typeof ManufacturersRoute
+  OurServicesRoute: typeof OurServicesRoute
+  PartnerWithUsRoute: typeof PartnerWithUsRoute
+  PaymentRoute: typeof PaymentRoute
+  PrivacyPolicyRoute: typeof PrivacyPolicyRoute
+  RegisterYourStoreRoute: typeof RegisterYourStoreRoute
+  RetailerPartnerRoute: typeof RetailerPartnerRoute
+  ScaleYourStartupRoute: typeof ScaleYourStartupRoute
+  SitemapRoute: typeof SitemapRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  StartupWithRiplRoute: typeof StartupWithRiplRoute
+  StoreListRoute: typeof StoreListRoute
+  TermsRoute: typeof TermsRoute
+  ApiChatRoute: typeof ApiChatRoute
+  OurServicesServiceIdRoute: typeof OurServicesServiceIdRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +759,548 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated': {
+      id: '/_authenticated'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AuthenticatedRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advertise-your-product': {
+      id: '/advertise-your-product'
+      path: '/advertise-your-product'
+      fullPath: '/advertise-your-product'
+      preLoaderRoute: typeof AdvertiseYourProductRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/business-valuation-calculator': {
+      id: '/business-valuation-calculator'
+      path: '/business-valuation-calculator'
+      fullPath: '/business-valuation-calculator'
+      preLoaderRoute: typeof BusinessValuationCalculatorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/business-valuation-report': {
+      id: '/business-valuation-report'
+      path: '/business-valuation-report'
+      fullPath: '/business-valuation-report'
+      preLoaderRoute: typeof BusinessValuationReportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/disclaimer': {
+      id: '/disclaimer'
+      path: '/disclaimer'
+      fullPath: '/disclaimer'
+      preLoaderRoute: typeof DisclaimerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/fund-your-business': {
+      id: '/fund-your-business'
+      path: '/fund-your-business'
+      fullPath: '/fund-your-business'
+      preLoaderRoute: typeof FundYourBusinessRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/fund-your-startup': {
+      id: '/fund-your-startup'
+      path: '/fund-your-startup'
+      fullPath: '/fund-your-startup'
+      preLoaderRoute: typeof FundYourStartupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/funding-programme': {
+      id: '/funding-programme'
+      path: '/funding-programme'
+      fullPath: '/funding-programme'
+      preLoaderRoute: typeof FundingProgrammeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/global-presence': {
+      id: '/global-presence'
+      path: '/global-presence'
+      fullPath: '/global-presence'
+      preLoaderRoute: typeof GlobalPresenceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/manufacturers': {
+      id: '/manufacturers'
+      path: '/manufacturers'
+      fullPath: '/manufacturers'
+      preLoaderRoute: typeof ManufacturersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/our-services': {
+      id: '/our-services'
+      path: '/our-services'
+      fullPath: '/our-services'
+      preLoaderRoute: typeof OurServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/partner-with-us': {
+      id: '/partner-with-us'
+      path: '/partner-with-us'
+      fullPath: '/partner-with-us'
+      preLoaderRoute: typeof PartnerWithUsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/payment': {
+      id: '/payment'
+      path: '/payment'
+      fullPath: '/payment'
+      preLoaderRoute: typeof PaymentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy-policy': {
+      id: '/privacy-policy'
+      path: '/privacy-policy'
+      fullPath: '/privacy-policy'
+      preLoaderRoute: typeof PrivacyPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/register-your-store': {
+      id: '/register-your-store'
+      path: '/register-your-store'
+      fullPath: '/register-your-store'
+      preLoaderRoute: typeof RegisterYourStoreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/retailer-partner': {
+      id: '/retailer-partner'
+      path: '/retailer-partner'
+      fullPath: '/retailer-partner'
+      preLoaderRoute: typeof RetailerPartnerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/scale-your-startup': {
+      id: '/scale-your-startup'
+      path: '/scale-your-startup'
+      fullPath: '/scale-your-startup'
+      preLoaderRoute: typeof ScaleYourStartupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap': {
+      id: '/sitemap'
+      path: '/sitemap'
+      fullPath: '/sitemap'
+      preLoaderRoute: typeof SitemapRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/startup-with-ripl': {
+      id: '/startup-with-ripl'
+      path: '/startup-with-ripl'
+      fullPath: '/startup-with-ripl'
+      preLoaderRoute: typeof StartupWithRiplRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/store-list': {
+      id: '/store-list'
+      path: '/store-list'
+      fullPath: '/store-list'
+      preLoaderRoute: typeof StoreListRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_authenticated/admin': {
+      id: '/_authenticated/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AuthenticatedAdminRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/our-investors': {
+      id: '/_authenticated/our-investors'
+      path: '/our-investors'
+      fullPath: '/our-investors'
+      preLoaderRoute: typeof AuthenticatedOurInvestorsRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/our-mentors': {
+      id: '/_authenticated/our-mentors'
+      path: '/our-mentors'
+      fullPath: '/our-mentors'
+      preLoaderRoute: typeof AuthenticatedOurMentorsRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/our-team': {
+      id: '/_authenticated/our-team'
+      path: '/our-team'
+      fullPath: '/our-team'
+      preLoaderRoute: typeof AuthenticatedOurTeamRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/partner': {
+      id: '/_authenticated/partner'
+      path: '/partner'
+      fullPath: '/partner'
+      preLoaderRoute: typeof AuthenticatedPartnerRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/portal': {
+      id: '/_authenticated/portal'
+      path: '/portal'
+      fullPath: '/portal'
+      preLoaderRoute: typeof AuthenticatedPortalRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/api/chat': {
+      id: '/api/chat'
+      path: '/api/chat'
+      fullPath: '/api/chat'
+      preLoaderRoute: typeof ApiChatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/global-presence/$market': {
+      id: '/global-presence/$market'
+      path: '/$market'
+      fullPath: '/global-presence/$market'
+      preLoaderRoute: typeof GlobalPresenceMarketRouteImport
+      parentRoute: typeof GlobalPresenceRoute
+    }
+    '/our-services_/$serviceId': {
+      id: '/our-services_/$serviceId'
+      path: '/our-services/$serviceId'
+      fullPath: '/our-services/$serviceId'
+      preLoaderRoute: typeof OurServicesServiceIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_authenticated/admin/': {
+      id: '/_authenticated/admin/'
+      path: '/'
+      fullPath: '/admin/'
+      preLoaderRoute: typeof AuthenticatedAdminIndexRouteImport
+      parentRoute: typeof AuthenticatedAdminRoute
+    }
+    '/_authenticated/admin/contacts': {
+      id: '/_authenticated/admin/contacts'
+      path: '/contacts'
+      fullPath: '/admin/contacts'
+      preLoaderRoute: typeof AuthenticatedAdminContactsRouteImport
+      parentRoute: typeof AuthenticatedAdminRoute
+    }
+    '/_authenticated/admin/content': {
+      id: '/_authenticated/admin/content'
+      path: '/content'
+      fullPath: '/admin/content'
+      preLoaderRoute: typeof AuthenticatedAdminContentRouteImport
+      parentRoute: typeof AuthenticatedAdminRoute
+    }
+    '/_authenticated/admin/crm': {
+      id: '/_authenticated/admin/crm'
+      path: '/crm'
+      fullPath: '/admin/crm'
+      preLoaderRoute: typeof AuthenticatedAdminCrmRouteImport
+      parentRoute: typeof AuthenticatedAdminRoute
+    }
+    '/_authenticated/admin/followups': {
+      id: '/_authenticated/admin/followups'
+      path: '/followups'
+      fullPath: '/admin/followups'
+      preLoaderRoute: typeof AuthenticatedAdminFollowupsRouteImport
+      parentRoute: typeof AuthenticatedAdminRoute
+    }
+    '/_authenticated/admin/people': {
+      id: '/_authenticated/admin/people'
+      path: '/people'
+      fullPath: '/admin/people'
+      preLoaderRoute: typeof AuthenticatedAdminPeopleRouteImport
+      parentRoute: typeof AuthenticatedAdminRoute
+    }
+    '/_authenticated/admin/programme': {
+      id: '/_authenticated/admin/programme'
+      path: '/programme'
+      fullPath: '/admin/programme'
+      preLoaderRoute: typeof AuthenticatedAdminProgrammeRouteImport
+      parentRoute: typeof AuthenticatedAdminRoute
+    }
+    '/_authenticated/admin/reports': {
+      id: '/_authenticated/admin/reports'
+      path: '/reports'
+      fullPath: '/admin/reports'
+      preLoaderRoute: typeof AuthenticatedAdminReportsRouteImport
+      parentRoute: typeof AuthenticatedAdminRoute
+    }
+    '/_authenticated/admin/routing': {
+      id: '/_authenticated/admin/routing'
+      path: '/routing'
+      fullPath: '/admin/routing'
+      preLoaderRoute: typeof AuthenticatedAdminRoutingRouteImport
+      parentRoute: typeof AuthenticatedAdminRoute
+    }
+    '/_authenticated/admin/stores': {
+      id: '/_authenticated/admin/stores'
+      path: '/stores'
+      fullPath: '/admin/stores'
+      preLoaderRoute: typeof AuthenticatedAdminStoresRouteImport
+      parentRoute: typeof AuthenticatedAdminRoute
+    }
+    '/_authenticated/admin/targets': {
+      id: '/_authenticated/admin/targets'
+      path: '/targets'
+      fullPath: '/admin/targets'
+      preLoaderRoute: typeof AuthenticatedAdminTargetsRouteImport
+      parentRoute: typeof AuthenticatedAdminRoute
+    }
+    '/_authenticated/admin/users': {
+      id: '/_authenticated/admin/users'
+      path: '/users'
+      fullPath: '/admin/users'
+      preLoaderRoute: typeof AuthenticatedAdminUsersRouteImport
+      parentRoute: typeof AuthenticatedAdminRoute
+    }
+    '/_authenticated/our-investors/': {
+      id: '/_authenticated/our-investors/'
+      path: '/'
+      fullPath: '/our-investors/'
+      preLoaderRoute: typeof AuthenticatedOurInvestorsIndexRouteImport
+      parentRoute: typeof AuthenticatedOurInvestorsRoute
+    }
+    '/_authenticated/our-investors/$slug': {
+      id: '/_authenticated/our-investors/$slug'
+      path: '/$slug'
+      fullPath: '/our-investors/$slug'
+      preLoaderRoute: typeof AuthenticatedOurInvestorsSlugRouteImport
+      parentRoute: typeof AuthenticatedOurInvestorsRoute
+    }
+    '/_authenticated/our-mentors/': {
+      id: '/_authenticated/our-mentors/'
+      path: '/'
+      fullPath: '/our-mentors/'
+      preLoaderRoute: typeof AuthenticatedOurMentorsIndexRouteImport
+      parentRoute: typeof AuthenticatedOurMentorsRoute
+    }
+    '/_authenticated/our-mentors/$slug': {
+      id: '/_authenticated/our-mentors/$slug'
+      path: '/$slug'
+      fullPath: '/our-mentors/$slug'
+      preLoaderRoute: typeof AuthenticatedOurMentorsSlugRouteImport
+      parentRoute: typeof AuthenticatedOurMentorsRoute
+    }
+    '/_authenticated/our-team/': {
+      id: '/_authenticated/our-team/'
+      path: '/'
+      fullPath: '/our-team/'
+      preLoaderRoute: typeof AuthenticatedOurTeamIndexRouteImport
+      parentRoute: typeof AuthenticatedOurTeamRoute
+    }
+    '/_authenticated/our-team/$slug': {
+      id: '/_authenticated/our-team/$slug'
+      path: '/$slug'
+      fullPath: '/our-team/$slug'
+      preLoaderRoute: typeof AuthenticatedOurTeamSlugRouteImport
+      parentRoute: typeof AuthenticatedOurTeamRoute
+    }
+    '/_authenticated/admin/deals/$id': {
+      id: '/_authenticated/admin/deals/$id'
+      path: '/deals/$id'
+      fullPath: '/admin/deals/$id'
+      preLoaderRoute: typeof AuthenticatedAdminDealsIdRouteImport
+      parentRoute: typeof AuthenticatedAdminRoute
+    }
+    '/_authenticated/admin/leads/$id': {
+      id: '/_authenticated/admin/leads/$id'
+      path: '/leads/$id'
+      fullPath: '/admin/leads/$id'
+      preLoaderRoute: typeof AuthenticatedAdminLeadsIdRouteImport
+      parentRoute: typeof AuthenticatedAdminRoute
+    }
+    '/_authenticated/admin/quotes/$id': {
+      id: '/_authenticated/admin/quotes/$id'
+      path: '/quotes/$id'
+      fullPath: '/admin/quotes/$id'
+      preLoaderRoute: typeof AuthenticatedAdminQuotesIdRouteImport
+      parentRoute: typeof AuthenticatedAdminRoute
+    }
   }
 }
 
+interface AuthenticatedAdminRouteChildren {
+  AuthenticatedAdminContactsRoute: typeof AuthenticatedAdminContactsRoute
+  AuthenticatedAdminContentRoute: typeof AuthenticatedAdminContentRoute
+  AuthenticatedAdminCrmRoute: typeof AuthenticatedAdminCrmRoute
+  AuthenticatedAdminFollowupsRoute: typeof AuthenticatedAdminFollowupsRoute
+  AuthenticatedAdminPeopleRoute: typeof AuthenticatedAdminPeopleRoute
+  AuthenticatedAdminProgrammeRoute: typeof AuthenticatedAdminProgrammeRoute
+  AuthenticatedAdminReportsRoute: typeof AuthenticatedAdminReportsRoute
+  AuthenticatedAdminRoutingRoute: typeof AuthenticatedAdminRoutingRoute
+  AuthenticatedAdminStoresRoute: typeof AuthenticatedAdminStoresRoute
+  AuthenticatedAdminTargetsRoute: typeof AuthenticatedAdminTargetsRoute
+  AuthenticatedAdminUsersRoute: typeof AuthenticatedAdminUsersRoute
+  AuthenticatedAdminIndexRoute: typeof AuthenticatedAdminIndexRoute
+  AuthenticatedAdminDealsIdRoute: typeof AuthenticatedAdminDealsIdRoute
+  AuthenticatedAdminLeadsIdRoute: typeof AuthenticatedAdminLeadsIdRoute
+  AuthenticatedAdminQuotesIdRoute: typeof AuthenticatedAdminQuotesIdRoute
+}
+
+const AuthenticatedAdminRouteChildren: AuthenticatedAdminRouteChildren = {
+  AuthenticatedAdminContactsRoute: AuthenticatedAdminContactsRoute,
+  AuthenticatedAdminContentRoute: AuthenticatedAdminContentRoute,
+  AuthenticatedAdminCrmRoute: AuthenticatedAdminCrmRoute,
+  AuthenticatedAdminFollowupsRoute: AuthenticatedAdminFollowupsRoute,
+  AuthenticatedAdminPeopleRoute: AuthenticatedAdminPeopleRoute,
+  AuthenticatedAdminProgrammeRoute: AuthenticatedAdminProgrammeRoute,
+  AuthenticatedAdminReportsRoute: AuthenticatedAdminReportsRoute,
+  AuthenticatedAdminRoutingRoute: AuthenticatedAdminRoutingRoute,
+  AuthenticatedAdminStoresRoute: AuthenticatedAdminStoresRoute,
+  AuthenticatedAdminTargetsRoute: AuthenticatedAdminTargetsRoute,
+  AuthenticatedAdminUsersRoute: AuthenticatedAdminUsersRoute,
+  AuthenticatedAdminIndexRoute: AuthenticatedAdminIndexRoute,
+  AuthenticatedAdminDealsIdRoute: AuthenticatedAdminDealsIdRoute,
+  AuthenticatedAdminLeadsIdRoute: AuthenticatedAdminLeadsIdRoute,
+  AuthenticatedAdminQuotesIdRoute: AuthenticatedAdminQuotesIdRoute,
+}
+
+const AuthenticatedAdminRouteWithChildren =
+  AuthenticatedAdminRoute._addFileChildren(AuthenticatedAdminRouteChildren)
+
+interface AuthenticatedOurInvestorsRouteChildren {
+  AuthenticatedOurInvestorsSlugRoute: typeof AuthenticatedOurInvestorsSlugRoute
+  AuthenticatedOurInvestorsIndexRoute: typeof AuthenticatedOurInvestorsIndexRoute
+}
+
+const AuthenticatedOurInvestorsRouteChildren: AuthenticatedOurInvestorsRouteChildren =
+  {
+    AuthenticatedOurInvestorsSlugRoute: AuthenticatedOurInvestorsSlugRoute,
+    AuthenticatedOurInvestorsIndexRoute: AuthenticatedOurInvestorsIndexRoute,
+  }
+
+const AuthenticatedOurInvestorsRouteWithChildren =
+  AuthenticatedOurInvestorsRoute._addFileChildren(
+    AuthenticatedOurInvestorsRouteChildren,
+  )
+
+interface AuthenticatedOurMentorsRouteChildren {
+  AuthenticatedOurMentorsSlugRoute: typeof AuthenticatedOurMentorsSlugRoute
+  AuthenticatedOurMentorsIndexRoute: typeof AuthenticatedOurMentorsIndexRoute
+}
+
+const AuthenticatedOurMentorsRouteChildren: AuthenticatedOurMentorsRouteChildren =
+  {
+    AuthenticatedOurMentorsSlugRoute: AuthenticatedOurMentorsSlugRoute,
+    AuthenticatedOurMentorsIndexRoute: AuthenticatedOurMentorsIndexRoute,
+  }
+
+const AuthenticatedOurMentorsRouteWithChildren =
+  AuthenticatedOurMentorsRoute._addFileChildren(
+    AuthenticatedOurMentorsRouteChildren,
+  )
+
+interface AuthenticatedOurTeamRouteChildren {
+  AuthenticatedOurTeamSlugRoute: typeof AuthenticatedOurTeamSlugRoute
+  AuthenticatedOurTeamIndexRoute: typeof AuthenticatedOurTeamIndexRoute
+}
+
+const AuthenticatedOurTeamRouteChildren: AuthenticatedOurTeamRouteChildren = {
+  AuthenticatedOurTeamSlugRoute: AuthenticatedOurTeamSlugRoute,
+  AuthenticatedOurTeamIndexRoute: AuthenticatedOurTeamIndexRoute,
+}
+
+const AuthenticatedOurTeamRouteWithChildren =
+  AuthenticatedOurTeamRoute._addFileChildren(AuthenticatedOurTeamRouteChildren)
+
+interface AuthenticatedRouteRouteChildren {
+  AuthenticatedAdminRoute: typeof AuthenticatedAdminRouteWithChildren
+  AuthenticatedOurInvestorsRoute: typeof AuthenticatedOurInvestorsRouteWithChildren
+  AuthenticatedOurMentorsRoute: typeof AuthenticatedOurMentorsRouteWithChildren
+  AuthenticatedOurTeamRoute: typeof AuthenticatedOurTeamRouteWithChildren
+  AuthenticatedPartnerRoute: typeof AuthenticatedPartnerRoute
+  AuthenticatedPortalRoute: typeof AuthenticatedPortalRoute
+}
+
+const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
+  AuthenticatedAdminRoute: AuthenticatedAdminRouteWithChildren,
+  AuthenticatedOurInvestorsRoute: AuthenticatedOurInvestorsRouteWithChildren,
+  AuthenticatedOurMentorsRoute: AuthenticatedOurMentorsRouteWithChildren,
+  AuthenticatedOurTeamRoute: AuthenticatedOurTeamRouteWithChildren,
+  AuthenticatedPartnerRoute: AuthenticatedPartnerRoute,
+  AuthenticatedPortalRoute: AuthenticatedPortalRoute,
+}
+
+const AuthenticatedRouteRouteWithChildren =
+  AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
+
+interface GlobalPresenceRouteChildren {
+  GlobalPresenceMarketRoute: typeof GlobalPresenceMarketRoute
+}
+
+const GlobalPresenceRouteChildren: GlobalPresenceRouteChildren = {
+  GlobalPresenceMarketRoute: GlobalPresenceMarketRoute,
+}
+
+const GlobalPresenceRouteWithChildren = GlobalPresenceRoute._addFileChildren(
+  GlobalPresenceRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
+  AboutRoute: AboutRoute,
+  AdvertiseYourProductRoute: AdvertiseYourProductRoute,
+  AuthRoute: AuthRoute,
+  BusinessValuationCalculatorRoute: BusinessValuationCalculatorRoute,
+  BusinessValuationReportRoute: BusinessValuationReportRoute,
+  ContactRoute: ContactRoute,
+  DisclaimerRoute: DisclaimerRoute,
+  FaqRoute: FaqRoute,
+  FundYourBusinessRoute: FundYourBusinessRoute,
+  FundYourStartupRoute: FundYourStartupRoute,
+  FundingProgrammeRoute: FundingProgrammeRoute,
+  GlobalPresenceRoute: GlobalPresenceRouteWithChildren,
+  ManufacturersRoute: ManufacturersRoute,
+  OurServicesRoute: OurServicesRoute,
+  PartnerWithUsRoute: PartnerWithUsRoute,
+  PaymentRoute: PaymentRoute,
+  PrivacyPolicyRoute: PrivacyPolicyRoute,
+  RegisterYourStoreRoute: RegisterYourStoreRoute,
+  RetailerPartnerRoute: RetailerPartnerRoute,
+  ScaleYourStartupRoute: ScaleYourStartupRoute,
+  SitemapRoute: SitemapRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
+  StartupWithRiplRoute: StartupWithRiplRoute,
+  StoreListRoute: StoreListRoute,
+  TermsRoute: TermsRoute,
+  ApiChatRoute: ApiChatRoute,
+  OurServicesServiceIdRoute: OurServicesServiceIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

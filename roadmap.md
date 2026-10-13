@@ -1,0 +1,7 @@
+- [x] Import source code and public pages; preserve existing functionality.
+- [x] Reproduce Funding Programme reference and generate unavailable images.
+- [x] Verify desktop/mobile layout, FAQ and registration write; remove test enquiry.
+- [x] Restore core/CRM schema and access boundaries in Cloud.
+- [ ] Existing records and users: awaiting original user IDs/emails and CSV/JSON exports; private account migration and access checks blocked.
+- [ ] Programme video: awaiting user-supplied video.
+- [ ] Published external callers and AI live verification: source preserved, publication/cutover and original private account data unavailable.

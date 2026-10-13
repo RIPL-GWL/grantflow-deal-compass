@@ -1,24 +1,40 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { SiteFooter, SiteHeader } from "@/frontend/components/site-chrome";
+import { CapabilitiesSection, ProcessSection, CtaSection } from "@/frontend/features/home/sections";
+import { HomeNetwork } from "@/frontend/features/home/network";
+import { ServiceGuide } from "@/frontend/features/home/service-guide";
+import { districtFigure, totalStoreFigure } from "@/frontend/data/retail-network";
+import { NavratriHome } from "@/frontend/features/home/navratri";
+import { isNavratri, useSiteTheme } from "@/frontend/lib/site-theme";
+import { getSiteShareImage } from "@/lib/site-appearance.functions";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
-  component: Index,
+  loader: () => getSiteShareImage(),
+  head: ({loaderData}) => ({ meta: [
+    { title: "Rishishwar Industry — FMCG Business Growth & Market Expansion" },
+    { name: "description", content: "Grow your FMCG business with Rishishwar Industry: retail partnerships, startup support, funding assistance and market expansion across India and global markets." },
+    { property: "og:title", content: "Rishishwar Industry — FMCG Business Growth & Market Expansion" },
+    { property: "og:description", content: `FMCG market access, retail partnerships and business growth support across ${totalStoreFigure} stores, ${districtFigure} districts and 8 countries.` },
+    { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" },
+    ...(loaderData?.image?.startsWith("https://") ? [{ property: "og:image", content: loaderData.image }, { name: "twitter:image", content: loaderData.image }] : []),
+  ]}), component: HomePage,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
+function HomePage() {
+  const theme = useSiteTheme();
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background">
+      <SiteHeader />
+      <main>
+        {isNavratri(theme) ? <NavratriHome /> : <>
+        <HomeNetwork />
+        <CapabilitiesSection />
+        <ServiceGuide />
+        <ProcessSection />
+        <CtaSection />
+        </>}
+      </main>
+      <SiteFooter />
     </div>
   );
 }
