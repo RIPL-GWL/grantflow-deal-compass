@@ -38,6 +38,7 @@ function AdminLayout() {
             <Link to="/admin/stores" className="text-muted-foreground [&.active]:text-primary">Stores</Link>
             {roles.some((r) => ["super_admin", "admin", "lead_manager"].includes(r)) && <Link to="/admin/routing" className="text-muted-foreground [&.active]:text-primary">Routing</Link>}
             <Link to="/admin/reports" className="text-muted-foreground [&.active]:text-primary">Reports</Link>
+            {roles.some((r) => ["super_admin", "admin", "programme_manager"].includes(r)) && <Link to="/admin/programme" className="text-muted-foreground [&.active]:text-primary">Funding Programme</Link>}
             {roles.some((r) => ["super_admin", "admin", "content_editor", "hr_manager"].includes(r)) && <Link to="/admin/people" className="text-muted-foreground [&.active]:text-primary">Investors, Mentors & Team</Link>}
             {roles.some((r) => ["super_admin", "admin", "content_editor"].includes(r)) && <Link to="/admin/content" className="text-muted-foreground [&.active]:text-primary">Website Content</Link>}
             {isSuper && <Link to="/admin/users" className="text-muted-foreground [&.active]:text-primary">Users & Roles</Link>}
