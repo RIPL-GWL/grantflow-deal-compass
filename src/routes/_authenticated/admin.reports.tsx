@@ -94,3 +94,47 @@ function Breakdown({ title, rows, sum }: { title: string; rows: [string, { value
     </section>
   );
 }
+
+const FUNNEL_STAGES = ["new", "qualified", "proposal", "negotiation", "won"] as const;
+
+function Funnel({ deals, sum }: { deals: { stage: string; value: number }[]; sum: (l: never[]) => number }) {
+  // A deal counts as having reached every funnel step up to its current stage; lost deals count only at entry.
+  const reached = FUNNEL_STAGES.map((s, i) => ({
+    stage: s,
+    list: deals.filter((d) => {
+      const idx = FUNNEL_STAGES.indexOf(d.stage as (typeof FUNNEL_STAGES)[number]);
+      return d.stage === "lost" ? i === 0 : idx >= i;
+    }),
+  }));
+  const total = deals.length;
+  const won = deals.filter((d) => d.stage === "won");
+  const lost = deals.filter((d) => d.stage === "lost").length;
+  const overall = total ? Math.round((won.length / total) * 100) : 0;
+  const closedRate = won.length + lost ? Math.round((won.length / (won.length + lost)) * 100) : 0;
+  return (
+    <section className="rounded-lg border bg-card p-4">
+      <div className="mb-3 flex flex-wrap items-baseline gap-x-6 gap-y-1">
+        <h2 className="mr-auto text-lg font-semibold text-foreground">Stage-wise funnel</h2>
+        <span className="text-sm text-muted-foreground">Won total: <b className="text-foreground">{inr(sum(won as never[]))}</b> · {won.length} deals</span>
+        <span className="text-sm text-muted-foreground">Overall conversion: <b className="text-foreground">{overall}%</b></span>
+        <span className="text-sm text-muted-foreground">Closed-deal win rate: <b className="text-foreground">{closedRate}%</b></span>
+      </div>
+      <ul className="space-y-2 text-sm">
+        {reached.map(({ stage, list }, i) => {
+          const prev = i ? reached[i - 1].list.length : list.length;
+          const conv = prev ? Math.round((list.length / prev) * 100) : 0;
+          return (
+            <li key={stage}>
+              <div className="flex justify-between text-foreground">
+                <span>{STAGE_LABELS[stage] ?? stage} — {list.length} deals{i > 0 && <span className="text-muted-foreground"> · {conv}% from previous</span>}</span>
+                <span>{inr(sum(list as never[]))}</span>
+              </div>
+              <div className="h-3 rounded bg-muted"><div className="h-3 rounded bg-primary" style={{ width: `${total ? (list.length / total) * 100 : 0}%` }} /></div>
+            </li>
+          );
+        })}
+      </ul>
+      {!total && <p className="mt-2 text-sm text-muted-foreground">No deals yet.</p>}
+    </section>
+  );
+}
