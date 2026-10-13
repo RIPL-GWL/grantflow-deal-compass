@@ -1,0 +1,61 @@
+{
+  "source": "code-archive",
+  "capabilities": [
+    {
+      "capability": "code and public routes",
+      "source": "uploaded ZIP",
+      "outcome": "migrate",
+      "status": "verified",
+      "next_action": "Imported routes compile; homepage, Funding Programme and payment page checked. Private admin flows await existing user export."
+    },
+    {
+      "capability": "database schema and permissions",
+      "source": "drizzle migrations",
+      "outcome": "migrate",
+      "status": "implemented",
+      "next_action": "Core and CRM schema, grants and policies restored; registration write verified. Existing-user access verification awaits export."
+    },
+    {
+      "capability": "application records",
+      "source": "not included in ZIP",
+      "outcome": "migrate",
+      "status": "pending",
+      "next_action": "User supplies CSV or JSON exports"
+    },
+    {
+      "capability": "auth identities and original ownership",
+      "source": "not included in ZIP",
+      "outcome": "migrate",
+      "status": "pending",
+      "next_action": "User supplies original user IDs and email export"
+    },
+    {
+      "capability": "uploaded file bytes",
+      "source": "bundled images and asset pointers",
+      "outcome": "preserve",
+      "status": "verified",
+      "next_action": "Bundled source media imported; generated Funding Programme photos render on desktop and mobile."
+    },
+    {
+      "capability": "AI providers and public endpoints",
+      "source": "existing TanStack functions and API routes",
+      "outcome": "preserve",
+      "status": "implemented",
+      "next_action": "Source providers and chat endpoint preserved; keys present. AI live-call verification remains pending."
+    },
+    {
+      "capability": "schedules and cutover",
+      "source": "source public callbacks",
+      "outcome": "preserve",
+      "status": "pending",
+      "next_action": "No concrete schedule detected in source; publication and external caller cutover remain unverified."
+    },
+    {
+      "capability": "payments",
+      "source": "payment page",
+      "outcome": "preserve",
+      "status": "verified",
+      "next_action": "Source manual bank-transfer payment details page preserved; no automated gateway existed."
+    }
+  ]
+}

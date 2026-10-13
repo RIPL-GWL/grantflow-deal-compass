@@ -1,0 +1,10 @@
+- [x] Import source code and public pages; preserve existing functionality.
+- [x] Reproduce Funding Programme reference and generate unavailable images.
+- [x] Restore core/CRM schema and access boundaries in Cloud.
+- [x] Fix application form button error; preview builds.
+- [x] Admin menu "Funding Programme" link.
+- [x] Deal page "AI follow-up message" button.
+- [x] CRM report: stage-wise funnel, conversion rate, won totals.
+- [x] End-to-end test: form + AI advice, login lock, programme team list.
+- [ ] Existing records and users: awaiting original user accounts and data exports.
+- [ ] Programme video: awaiting user-supplied video.

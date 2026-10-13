@@ -1,0 +1,5 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { SiteFooter, SiteHeader } from "@/frontend/components/site-chrome";
+import { AdvertisingPageContent } from "@/frontend/features/advertise/sections";
+export const Route=createFileRoute("/advertise-your-product")({head:()=>({meta:[{title:"Advertise Your Product in Retail Stores — Rishishwar Industry"},{name:"description",content:"Explore silent 10–20 second shop video ads and static illuminated sign-board placements across the Rishishwar Industry retail network."},{property:"og:title",content:"Advertise Your Product in Retail Stores"},{property:"og:description",content:"Build product visibility through participating retail stores with video and illuminated sign-board formats."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}]}),component:Page});
+function Page(){return <div className="min-h-screen bg-background"><SiteHeader/><main><AdvertisingPageContent/></main><SiteFooter/></div>}
