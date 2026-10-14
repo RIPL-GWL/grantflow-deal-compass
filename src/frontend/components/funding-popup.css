@@ -1,0 +1,24 @@
+.funding-popup {
+  --popup-surface: oklch(0.12 0.012 35);
+  --popup-ink: oklch(0.99 0 0);
+  --popup-gold: oklch(0.84 0.15 85);
+  --popup-action: oklch(0.59 0.24 25);
+  --popup-shade: oklch(0.06 0 0 / 0.84);
+  --popup-shadow: 0 12px 60px oklch(0.05 0 0 / 0.5);
+  position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  z-index: 60; width: min(790px, calc(100vw - 32px), calc((100dvh - 72px) * 789 / 680));
+  background: var(--popup-surface); color: var(--popup-ink); border: 1px solid var(--popup-gold);
+  border-radius: 8px; box-shadow: var(--popup-shadow); outline: none;
+}
+.funding-popup-overlay { background: oklch(0.06 0 0 / 0.84); z-index: 59; }
+.funding-popup-poster { position: relative; overflow: hidden; border-radius: 7px; }
+.funding-popup-poster img { display: block; width: 100%; height: auto; }
+.funding-popup .funding-popup-registration { position: absolute; left: 24.8%; top: 84.7%; width: 50%; height: 7.8%; padding: 0; border-radius: 999px; background: transparent; }
+.funding-popup .funding-popup-registration:hover { background: transparent; }
+.funding-popup .funding-popup-registration:focus-visible { outline: 3px solid var(--popup-ink); outline-offset: 2px; }
+.funding-popup .funding-popup-close { position: absolute; top: -14px; right: -10px; width: 36px; height: 36px; border-radius: 50%; background: var(--popup-surface); color: var(--popup-ink); border: 1px solid var(--popup-gold); }
+.funding-popup .funding-popup-mobile-register { display: none; }
+@media (width < 640px) {
+  .funding-popup { width: min(calc(100vw - 28px), calc((100dvh - 120px) * 789 / 680)); }
+  .funding-popup .funding-popup-mobile-register { display: flex; width: calc(100% - 24px); margin: 12px; height: 44px; background: var(--popup-action); color: var(--popup-ink); text-transform: none; letter-spacing: 0; font-size: 14px; padding-inline: 10px; }
+}

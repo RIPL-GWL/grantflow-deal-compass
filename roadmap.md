@@ -7,6 +7,7 @@
 - [x] CRM report: stage-wise funnel, conversion rate, won totals.
 - [x] End-to-end test: form + AI advice, login lock, programme team list.
 - [x] Merge archive v2: CRM report calculations module + tests.
+- [x] Add and verify image-based funding popup and registration buttons on related public pages.
 - [ ] Existing records and users: awaiting original user accounts and data exports.
 - [ ] Programme video: awaiting user-supplied video.
 - [ ] Publish + live AI check on published site: awaiting user's go-ahead to publish.
