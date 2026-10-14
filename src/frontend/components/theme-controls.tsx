@@ -15,7 +15,7 @@ export function ThemeMenuOptions() {
       <span className="px-1 font-display text-xs font-semibold uppercase tracking-wider text-foreground/60">Theme</span>
       <div className="grid grid-cols-3 gap-2">
         {siteThemes.map((t) => (
-          <Button key={t} size="sm" variant={theme === t ? "default" : "outline"} aria-pressed={theme === t} onClick={() => setSiteTheme(t)}>{themeLabels[t]}</Button>
+          <button key={t} type="button" aria-pressed={theme === t} onClick={() => setSiteTheme(t)} className={`rounded-md border px-2 py-2 font-display text-[11px] font-semibold uppercase tracking-wide transition-colors ${theme === t ? "border-primary bg-primary text-primary-foreground" : "border-border bg-background text-foreground"}`}>{themeLabels[t]}</button>
         ))}
       </div>
     </div>
