@@ -6,7 +6,7 @@ import { investors } from "@/frontend/features/investors/data";
 import { mentors, team } from "@/frontend/features/people/data";
 
 export const Route = createFileRoute("/sitemap")({
-  head: () => ({
+  head: () => ({ links: [{ rel: "canonical", href: "/sitemap" }],
     meta: [
       { title: "Sitemap — Rishishwar Industry Pvt. Ltd." },
       { name: "description", content: "Every page on the Rishishwar Industry website: services, partner journeys, calculators, global markets and support." },

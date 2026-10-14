@@ -10,7 +10,7 @@ import { getSiteShareImage } from "@/lib/site-appearance.functions";
 
 export const Route = createFileRoute("/")({
   loader: () => getSiteShareImage(),
-  head: ({loaderData}) => ({ meta: [
+  head: ({loaderData}) => ({ links: [{ rel: "canonical", href: "/" }], meta: [
     { title: "Rishishwar Industry — FMCG Business Growth & Market Expansion" },
     { name: "description", content: "Grow your FMCG business with Rishishwar Industry: retail partnerships, startup support, funding assistance and market expansion across India and global markets." },
     { property: "og:title", content: "Rishishwar Industry — FMCG Business Growth & Market Expansion" },

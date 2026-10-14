@@ -8,6 +8,7 @@ import poster from "@/assets/funding-popup.webp.asset.json";
 import "./funding-popup.css";
 
 const fundingPaths = new Set([
+  "/",
   "/fund-your-business", "/fund-your-startup", "/funding-programme",
   "/startup-with-ripl", "/scale-your-startup", "/our-services/funding-support",
 ]);
@@ -19,7 +20,7 @@ export function FundingPopup() {
 
   useEffect(() => {
     setOpen(false);
-    if (!fundingPaths.has(pathname.replace(/\/$/, "")) || hash === "register") return;
+    if (!fundingPaths.has((pathname.replace(/\/$/, "") || "/")) || hash === "register") return;
     const timer = window.setTimeout(() => setOpen(true), 700);
     return () => window.clearTimeout(timer);
   }, [pathname, hash]);

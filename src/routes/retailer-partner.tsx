@@ -3,7 +3,7 @@ import { SiteHeader, SiteFooter } from "@/frontend/components/site-chrome";
 import { HeroSection, HighlightsSection, CalculatorSection, CtaSection } from "@/frontend/features/retailer-partner/sections";
 
 export const Route = createFileRoute("/retailer-partner")({
-  head: () => ({
+  head: () => ({ links: [{ rel: "canonical", href: "/retailer-partner" }],
     meta: [
       { title: "Retailer Partner & Approx. Rent Calculator — Rishishwar Industry" },
       { name: "description", content: "Explore the Rishishwar Industry retailer partnership and calculate an indicative monthly store rent from your location and shop area. Estimates are subject to inspection and approval." },

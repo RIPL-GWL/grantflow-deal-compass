@@ -3,7 +3,7 @@ import { SiteHeader, SiteFooter } from "@/frontend/components/site-chrome";
 import { HeroSection, CountriesSection, EndToEndSupportSection, BiggerMarketsSection, CtaSection } from "@/frontend/features/global-presence/sections";
 
 export const Route = createFileRoute("/global-presence")({
-  head: () => ({
+  head: () => ({ links: [{ rel: "canonical", href: "/global-presence" }],
     meta: [
       {
         title:

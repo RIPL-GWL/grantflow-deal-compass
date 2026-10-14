@@ -4,7 +4,7 @@ import { EmailForm } from "@/frontend/components/forms/email-form";
 import { storeFields } from "@/frontend/content/forms";
 
 export const Route = createFileRoute("/register-your-store")({
-  head: () => ({
+  head: () => ({ links: [{ rel: "canonical", href: "/register-your-store" }],
     meta: [
       { title: "Register Your Store — Rishishwar Industry Retailer Partner" },
       { name: "description", content: "Register your shop as a Rishishwar Industry retailer partner. Our team will contact you for store inspection and commercial discussion." },

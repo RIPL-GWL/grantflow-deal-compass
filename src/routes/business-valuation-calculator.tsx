@@ -4,7 +4,7 @@ import { SiteFooter, SiteHeader } from "@/frontend/components/site-chrome";
 
 export const Route = createFileRoute("/business-valuation-calculator")({
   head: () => ({
-    links: [{ rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" }],
+    links: [{ rel: "canonical", href: "/business-valuation-calculator" }, { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" }],
     meta: [
       { title: "Business Valuation Calculator — Value, Funding & Equity | Rishishwar Industry" },
       { name: "description", content: "Free business valuation calculator for Indian manufacturers and startups. Estimate valuation, funding readiness, funding range and equity dilution." },

@@ -3,7 +3,7 @@ import { SiteHeader, SiteFooter } from "@/frontend/components/site-chrome";
 import { HeroSection, FundingNeedsSection, WhoCanApplyFormSection, FundingProcessSection, AcrossIndiaSection, DisclaimerSection } from "@/frontend/features/fund-your-business/sections";
 
 export const Route = createFileRoute("/fund-your-business")({
-  head: () => ({
+  head: () => ({ links: [{ rel: "canonical", href: "/fund-your-business" }],
     meta: [
       { title: "Business Funding & Assistance — Manufacturers & Startups | Rishishwar Industry" },
       { name: "description", content: "Explore business funding assistance from ₹50,000 to ₹2 crore for manufacturers and startups. Get guidance for machinery, working capital and expansion." },

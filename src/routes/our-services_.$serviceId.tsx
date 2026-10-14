@@ -58,6 +58,7 @@ export const Route = createFileRoute("/our-services_/$serviceId")({
     if (!s) return { meta: [{ title: "Service not found — Rishishwar Industry" }, { name: "robots", content: "noindex" }] };
     const title = `${s.title} — Rishishwar Industry`;
     return {
+      links: [{ rel: "canonical", href: `/our-services/${s.id}` }],
       meta: [
         { title },
         { name: "description", content: s.text.slice(0, 158) },

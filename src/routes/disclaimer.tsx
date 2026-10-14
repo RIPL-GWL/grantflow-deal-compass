@@ -3,7 +3,7 @@ import { LegalPage } from "@/frontend/features/legal/legal-page";
 import { COMPANY } from "@/frontend/content/company";
 
 export const Route = createFileRoute("/disclaimer")({
-  head: () => ({
+  head: () => ({ links: [{ rel: "canonical", href: "/disclaimer" }],
     meta: [
       { title: "Disclaimer — Rishishwar Industry Pvt. Ltd." },
       { name: "description", content: "Important notes on funding, valuation estimates, rent estimates and global market information on the RIPL website." },

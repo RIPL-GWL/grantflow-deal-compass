@@ -3,7 +3,7 @@ import { LegalPage } from "@/frontend/features/legal/legal-page";
 import { COMPANY } from "@/frontend/content/company";
 
 export const Route = createFileRoute("/privacy-policy")({
-  head: () => ({
+  head: () => ({ links: [{ rel: "canonical", href: "/privacy-policy" }],
     meta: [
       { title: "Privacy Policy — Rishishwar Industry Pvt. Ltd." },
       { name: "description", content: "How Rishishwar Industry collects, uses and protects the details you share through our website forms." },

@@ -105,6 +105,7 @@ function ErrorComponent({ error, reset }: ErrorComponentProps) {
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
+    scripts: [{ type: "application/ld+json", children: JSON.stringify({ "@context": "https://schema.org", "@type": "Organization", name: "Rishishwar Industry Pvt. Ltd.", url: "https://rishishwarindustry.in", logo: "https://rishishwarindustry.in/favicon.png", address: { "@type": "PostalAddress", addressLocality: "Gwalior", addressRegion: "Madhya Pradesh", addressCountry: "IN" } }) }],
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
