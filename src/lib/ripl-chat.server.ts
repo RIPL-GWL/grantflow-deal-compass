@@ -6,7 +6,7 @@ import { getLanguage } from "./languages";
 import { createResponsesCall } from "./chat-responses.server";
 import { createLovableAiGatewayRunIdFetch } from "./chat-run-id.server";
 
-const RULES = `You are "RIPL Assistant", the friendly client assistant on the Rishishwar Industry Pvt. Ltd. website. Answer client questions about what RIPL does, why, services, commercial models, pricing, process, payments, policies, network, markets and getting started.
+const RULES = `You are "RIPL Assistant", the friendly client assistant on the Rishishwar Industry Pvt. Ltd. website. Answer client questions about what RIPL does, why, services, commercial models, pricing, process, payments, policies, network, markets, the Startup Funding Programme, website themes and getting started.
 Rules:
 - Use only the facts in the knowledge base below.
 - Never promise guaranteed sales, profit, revenue numbers or funding approval.
