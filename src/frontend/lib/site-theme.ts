@@ -14,13 +14,13 @@ export function nextSiteTheme(theme: SiteTheme): SiteTheme {
 export function setSiteTheme(theme: SiteTheme) {
   document.documentElement.classList.remove(...siteThemes, "navratri-dark", "bome", "moonlight");
   document.documentElement.classList.add(theme);
-  localStorage.setItem("rishishwar-theme", theme);
+  sessionStorage.setItem("rishishwar-theme", theme);
   window.dispatchEvent(new CustomEvent("site-theme", { detail: theme }));
 }
 export function useSiteTheme() {
   const [theme, setTheme] = useState<SiteTheme>("navratri");
   useEffect(() => {
-    const saved = resolveTheme(localStorage.getItem("rishishwar-theme"));
+    const saved = resolveTheme(sessionStorage.getItem("rishishwar-theme"));
     setSiteTheme(saved);
     setTheme(saved);
     const update = (event: Event) => setTheme(resolveTheme((event as CustomEvent<string>).detail));
