@@ -4,7 +4,7 @@ import { HeroSection, ServicesDetailSection, HowWeWorkSection, WhoWeServeSection
 import { totalStoreFigure } from "@/frontend/data/retail-network";
 
 export const Route = createFileRoute("/our-services")({
-  head: () => ({
+  head: () => ({ links: [{ rel: "canonical", href: "/our-services" }],
     meta: [
       { title: "Our Services — Market Access, Distribution & Global Expansion | Rishishwar Industry" },
       { name: "description", content: `Explore Rishishwar Industry services: retail network access across ${totalStoreFigure} stores, distributor & dealer appointment, domestic market expansion, import & export support and business funding assistance for FMCG manufacturers.` },

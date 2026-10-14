@@ -4,7 +4,7 @@ import { StoreList } from "@/frontend/features/store-list/sections";
 
 export const Route = createFileRoute("/store-list")({
   validateSearch: (search: Record<string, unknown>) => ({ state: typeof search['state'] === "string" ? search['state'] : "", area: typeof search['area'] === "string" ? search['area'] : "", district: typeof search['district'] === "string" ? search['district'] : "" }),
-  head: () => ({ meta: [
+  head: () => ({ links: [{ rel: "canonical", href: "/store-list" }], meta: [
     { title: "Retail Store Network List — Rishishwar Industry" },
     { name: "description", content: "Browse Rishishwar Industry retail network totals by state, area and district." },
     { property: "og:title", content: "Retail Store Network List — Rishishwar Industry" },

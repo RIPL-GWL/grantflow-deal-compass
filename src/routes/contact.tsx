@@ -7,7 +7,7 @@ import { contactFields } from "@/frontend/content/forms";
 import { SeasonalPageBanner } from "@/frontend/components/seasonal-page-banner";
 
 export const Route = createFileRoute("/contact")({
-  head: () => ({
+  head: () => ({ links: [{ rel: "canonical", href: "/contact" }],
     meta: [
       {
         title:

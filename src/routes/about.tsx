@@ -5,7 +5,7 @@ import { districtFigure, totalStoreFigure } from "@/frontend/data/retail-network
 import { SeasonalPageBanner } from "@/frontend/components/seasonal-page-banner";
 
 export const Route = createFileRoute("/about")({
-  head: () => ({
+  head: () => ({ links: [{ rel: "canonical", href: "/about" }],
     meta: [
       {
         title:

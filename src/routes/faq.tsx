@@ -19,7 +19,7 @@ import { useSiteContent } from "@/lib/site-content";
 import { SeasonalPageBanner } from "@/frontend/components/seasonal-page-banner";
 
 export const Route = createFileRoute("/faq")({
-  head: () => ({
+  head: () => ({ links: [{ rel: "canonical", href: "/faq" }],
     meta: [
       { title: "FAQ — Rishishwar Industry | Sawaal aur Jawab" },
       {

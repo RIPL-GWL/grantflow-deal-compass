@@ -3,7 +3,7 @@ import { ValuationCalculator } from "@/frontend/features/valuation/valuation-cal
 import { SiteFooter, SiteHeader } from "@/frontend/components/site-chrome";
 
 export const Route = createFileRoute("/business-valuation-calculator")({
-  head: () => ({
+  head: () => ({ links: [{ rel: "canonical", href: "/business-valuation-calculator" }],
     links: [{ rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" }],
     meta: [
       { title: "Business Valuation Calculator — Value, Funding & Equity | Rishishwar Industry" },

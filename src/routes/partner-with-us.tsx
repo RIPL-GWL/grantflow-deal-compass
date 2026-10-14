@@ -9,7 +9,7 @@ import { mfgFields, retailFields } from "@/frontend/content/forms";
 export const Route = createFileRoute("/partner-with-us")({
   validateSearch: (search: Record<string, unknown>): { partner?: "manufacturer" } =>
     search["partner"] === "manufacturer" ? { partner: "manufacturer" } : {},
-  head: () => ({
+  head: () => ({ links: [{ rel: "canonical", href: "/partner-with-us" }],
     meta: [
       { title: "Partner With Us — Retail Store & Manufacturer Registration | Rishishwar Industry" },
       { name: "description", content: "Register as a retail store partner or as an FMCG manufacturer with Rishishwar Industry. Our team will contact you for the next steps." },

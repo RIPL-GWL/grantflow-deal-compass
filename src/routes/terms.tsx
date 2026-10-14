@@ -3,7 +3,7 @@ import { LegalPage } from "@/frontend/features/legal/legal-page";
 import { COMPANY } from "@/frontend/content/company";
 
 export const Route = createFileRoute("/terms")({
-  head: () => ({
+  head: () => ({ links: [{ rel: "canonical", href: "/terms" }],
     meta: [
       { title: "Terms & Conditions — Rishishwar Industry Pvt. Ltd." },
       { name: "description", content: "Terms that apply when you use the Rishishwar Industry website, calculators and enquiry forms." },
