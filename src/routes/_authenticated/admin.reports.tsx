@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { fetchMyRoles } from "@/lib/admin";
+import { conversionSummary, stageFunnel } from "@/lib/crm-report";
 import { canSeeAll, fetchDeals, fetchPeople, inr, monthStart, PIPELINE_LABELS, PIPELINES, STAGE_LABELS, STAGES } from "@/lib/crm";
 
 export const Route = createFileRoute("/_authenticated/admin/reports")({
@@ -60,11 +61,11 @@ function ReportsPage() {
         <Card label="Lost this month" value={String(lostM.length)} />
         <Card label="Win rate this month" value={`${winRate}%`} />
       </div>
+      <StageReport deals={deals} />
       <div className="grid gap-4 md:grid-cols-2">
         <Breakdown title="By stage" rows={STAGES.map((s) => [STAGE_LABELS[s] ?? s, deals.filter((d) => d.stage === s)])} sum={sum} />
         <Breakdown title="By pipeline" rows={PIPELINES.map((p) => [PIPELINE_LABELS[p] ?? p, deals.filter((d) => d.pipeline === p)])} sum={sum} />
       </div>
-      <Funnel deals={deals} sum={sum} />
       {canSeeAll(roles) && (
         <section className="rounded-lg border bg-card p-4">
           <h2 className="mb-3 text-lg font-semibold text-foreground">Manager view — team performance</h2>
@@ -95,46 +96,21 @@ function Breakdown({ title, rows, sum }: { title: string; rows: [string, { value
   );
 }
 
-const FUNNEL_STAGES = ["new", "qualified", "proposal", "negotiation", "won"] as const;
-
-function Funnel({ deals, sum }: { deals: { stage: string; value: number }[]; sum: (l: never[]) => number }) {
-  // A deal counts as having reached every funnel step up to its current stage; lost deals count only at entry.
-  const reached = FUNNEL_STAGES.map((s, i) => ({
-    stage: s,
-    list: deals.filter((d) => {
-      const idx = FUNNEL_STAGES.indexOf(d.stage as (typeof FUNNEL_STAGES)[number]);
-      return d.stage === "lost" ? i === 0 : idx >= i;
-    }),
-  }));
-  const total = deals.length;
-  const won = deals.filter((d) => d.stage === "won");
-  const lost = deals.filter((d) => d.stage === "lost").length;
-  const overall = total ? Math.round((won.length / total) * 100) : 0;
-  const closedRate = won.length + lost ? Math.round((won.length / (won.length + lost)) * 100) : 0;
+function StageReport({ deals }: { deals: { stage: string; value: number }[] }) {
+  const c = conversionSummary(deals);
+  const f = stageFunnel(deals);
   return (
-    <section className="rounded-lg border bg-card p-4">
-      <div className="mb-3 flex flex-wrap items-baseline gap-x-6 gap-y-1">
-        <h2 className="mr-auto text-lg font-semibold text-foreground">Stage-wise funnel</h2>
-        <span className="text-sm text-muted-foreground">Won total: <b className="text-foreground">{inr(sum(won as never[]))}</b> · {won.length} deals</span>
-        <span className="text-sm text-muted-foreground">Overall conversion: <b className="text-foreground">{overall}%</b></span>
-        <span className="text-sm text-muted-foreground">Closed-deal win rate: <b className="text-foreground">{closedRate}%</b></span>
+    <section className="space-y-3 rounded-lg border bg-card p-4">
+      <h2 className="text-lg font-semibold text-foreground">Stage-wise report (all time)</h2>
+      <div className="grid gap-3 sm:grid-cols-3">
+        <div><p className="text-xs text-muted-foreground">Conversion rate (won ÷ closed)</p><p className="text-2xl font-semibold text-foreground">{c.conversionRate}%</p></div>
+        <div><p className="text-xs text-muted-foreground">Jeeti hui rakam</p><p className="text-2xl font-semibold text-foreground">{inr(c.wonAmount)} · {c.wonCount}</p></div>
+        <div><p className="text-xs text-muted-foreground">Lost deals</p><p className="text-2xl font-semibold text-foreground">{c.lostCount}</p></div>
       </div>
-      <ul className="space-y-2 text-sm">
-        {reached.map(({ stage, list }, i) => {
-          const prev = i ? (reached[i - 1]?.list.length ?? 0) : list.length;
-          const conv = prev ? Math.round((list.length / prev) * 100) : 0;
-          return (
-            <li key={stage}>
-              <div className="flex justify-between text-foreground">
-                <span>{STAGE_LABELS[stage] ?? stage} — {list.length} deals{i > 0 && <span className="text-muted-foreground"> · {conv}% from previous</span>}</span>
-                <span>{inr(sum(list as never[]))}</span>
-              </div>
-              <div className="h-3 rounded bg-muted"><div className="h-3 rounded bg-primary" style={{ width: `${total ? (list.length / total) * 100 : 0}%` }} /></div>
-            </li>
-          );
-        })}
-      </ul>
-      {!total && <p className="mt-2 text-sm text-muted-foreground">No deals yet.</p>}
+      <div className="overflow-x-auto"><table className="w-full text-sm">
+        <thead className="text-left text-muted-foreground"><tr><th className="py-2">Stage</th><th>Deals at stage</th><th>Value</th><th>Reached this stage</th><th>% of all deals</th></tr></thead>
+        <tbody>{f.map((r) => <tr key={r.stage} className="border-t text-foreground"><td className="py-2">{STAGE_LABELS[r.stage]}</td><td>{r.count}</td><td>{inr(r.value)}</td><td>{r.reached}</td><td>{r.reachedPct}%</td></tr>)}</tbody>
+      </table></div>
     </section>
   );
 }
