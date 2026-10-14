@@ -14,7 +14,7 @@ import { isNavratri, useSiteTheme } from "@/frontend/lib/site-theme";
 import { Button } from "@/frontend/components/ui/button";
 import { COMPANY } from "@/frontend/content/company";
 import { countries } from "@/frontend/features/global-presence/content";
-import { ThemeCycle } from "./theme-controls";
+import { ThemeCycle, ThemeMenuOptions } from "./theme-controls";
 
 export const navLinks = [
   { to: "/", label: "Home" },
@@ -54,6 +54,7 @@ export function SiteHeader() {
       {open && (
         <nav aria-label="Mobile navigation" className="max-h-[calc(100svh-72px)] overflow-y-auto border-t border-border bg-background px-4 py-5 shadow-2xl 2xl:hidden">
           <div className="mx-auto grid max-w-7xl gap-1">
+            <ThemeMenuOptions />
             <Button asChild className="mb-2 lg:hidden"><Link to="/partner-with-us" onClick={() => setOpen(false)}>Partner With Us</Link></Button>
             {navLinks.map((link) => <Link key={link.to} to={link.to} onClick={() => setOpen(false)} className={`border-l px-4 py-3 font-display text-sm font-medium uppercase tracking-wider ${pathname === link.to ? "border-primary bg-primary/10 text-primary" : "border-transparent text-foreground/75"}`}>{link.label}</Link>)}
           </div>
