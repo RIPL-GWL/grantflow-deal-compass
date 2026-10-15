@@ -3,15 +3,16 @@ import { ArrowRight, BriefcaseBusiness, CalendarDays, Car, ChartNoAxesCombined, 
 import { Button } from "@/frontend/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/frontend/components/ui/accordion";
 import { ProgrammeApplicationForm } from "./application-form";
-import heroPhoto from "@/assets/funding-gwalior-hero.jpg";
-import supportPhotos from "@/assets/funding-support-photos.jpg";
+import heroPhoto from "@/assets/funding-gwalior-hero.webp.asset.json";
+import supportPhotos from "@/assets/funding-support-photos.webp.asset.json";
 import logo from "@/assets/header-wordmark-dark.webp.asset.json";
 import { useState, useEffect } from "react";
 import { Dialog, DialogContent, DialogTitle } from "@/frontend/components/ui/dialog";
 import { Play } from "lucide-react";
 import { programmeRules, registrationTotal } from "./rules";
 import { SiteFooter, SiteHeader } from "@/frontend/components/site-chrome";
-const hero = { url: heroPhoto };
+const hero = { url: heroPhoto.url };
+const supportPhotoUrl = supportPhotos.url;
 import benefit0Asset from "@/assets/funding-programme-benefit-0.webp.asset.json";
 const benefit0 = benefit0Asset.url;
 import benefit1Asset from "@/assets/funding-programme-benefit-1.webp.asset.json";
@@ -101,7 +102,7 @@ export function FundingProgrammePage() {
     <section id="benefits" className="programme-benefits"><div className="page-shell programme-section"><Heading>What You Get</Heading><div className="programme-benefit-grid">{benefits.map(({ icon: Icon, title, text, image }) => <article key={title}><img src={image} alt={title} width={592} height={298} loading="lazy" /><div><span className="programme-benefit-icon"><Icon /></span><h3>{title}</h3><p>{text}</p></div></article>)}</div></div></section>
     <section className="page-shell programme-section programme-logistics">
       <div className="programme-fee"><h2 className="programme-band-title">Registration Fee</h2><div className="programme-fee-body"><div className="programme-main-fee"><Users /><p><strong>₹2,999/-</strong><span>+18% GST</span></p></div><p>Includes participation for up to 2 persons per startup.</p><div className="programme-extra-fee"><Users /><div><h3>Additional Participant</h3><strong>₹2,000/-</strong><p>+18% GST per person</p><small>Applicable beyond the first 2 persons.</small></div></div></div></div>
-      <div className="programme-support"><h2 className="programme-band-title">Completely Free for Selected Participants</h2><div className="programme-support-body"><div className="programme-support-grid">{support.map(({ icon: Icon, title, note }) => <div key={title}><Icon /><h3>{title}</h3><p>({note})</p></div>)}</div><div className="programme-support-photos"><img src={supportPhotos} alt="Accommodation, meals, train ticket, local travel and Gwalior tour" width={1536} height={512} loading="lazy" /></div><p className="programme-support-banner">STAY · FOOD · ONE-SIDE TICKET · LOCAL TRAVEL · LOCAL TOUR<br /><strong>COMPLETELY FREE</strong></p><p className="programme-small">Eligible participants receive these benefits subject to policy, eligibility and Terms & Conditions. Confirm travel reimbursement before booking.</p></div></div>
+      <div className="programme-support"><h2 className="programme-band-title">Completely Free for Selected Participants</h2><div className="programme-support-body"><div className="programme-support-grid">{support.map(({ icon: Icon, title, note }) => <div key={title}><Icon /><h3>{title}</h3><p>({note})</p></div>)}</div><div className="programme-support-photos"><img src={supportPhotoUrl} alt="Accommodation, meals, train ticket, local travel and Gwalior tour" width={1200} height={400} loading="lazy" /></div><p className="programme-support-banner">STAY · FOOD · ONE-SIDE TICKET · LOCAL TRAVEL · LOCAL TOUR<br /><strong>COMPLETELY FREE</strong></p><p className="programme-small">Eligible participants receive these benefits subject to policy, eligibility and Terms & Conditions. Confirm travel reimbursement before booking.</p></div></div>
       <div className="programme-event"><h2 className="programme-band-title">Event Details</h2><div><p><CalendarDays /><span><strong>29 – 31 December 2026</strong><small>(3-Day Summit)</small></span></p><p><MapPin /><strong>Gwalior, Madhya Pradesh, India</strong></p><img src={hero.url} alt="Gwalior summit location" width={1944} height={700} loading="lazy" /><RegisterButton compact /></div></div>
     </section>
     <section className="page-shell programme-section programme-eligibility"><div><Heading>Who Can Apply?</Heading><IconTiles items={eligibility} /><div id="why-participate"><Heading>Why Participate?</Heading></div><IconTiles items={[{ icon: Lightbulb, title: "Funding Opportunities" }, { icon: Users, title: "Mentorship Support" }, { icon: Handshake, title: "Investor Connect" }, { icon: ClipboardCheck, title: "Business Evaluation" }, { icon: Handshake, title: "Strategic Partnerships" }, { icon: Globe2, title: "National Visibility" }]} /></div><div className="programme-platform"><img src={benefit4} alt="Founder presenting a startup to an audience" width={592} height={298} loading="lazy" /><div><h2>A PLATFORM FOR<br /><em>REAL IDEAS,<br />REAL FOUNDERS,</em><br />REAL IMPACT.</h2><RegisterButton compact /></div></div></section>
