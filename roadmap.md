@@ -8,7 +8,7 @@
 - [x] End-to-end test: form + AI advice, login lock, programme team list.
 - [x] Merge archive v2: CRM report calculations module + tests.
 - [x] Add and verify image-based funding popup and registration buttons on related public pages.
-- [x] Recheck site image inventory; replace bundled funding JPEGs with optimized WebP assets and repair stale hero pointer.
+- [x] Recheck site image inventory; replace bundled funding JPEGs with optimized WebP assets, repair the stale hero pointer, and optimize the largest remaining storefront image.
 - [ ] Existing records and users: awaiting original user accounts and data exports.
 - [ ] Programme video: awaiting user-supplied video.
 - [ ] Publish + live AI check on published site: awaiting user's go-ahead to publish.
