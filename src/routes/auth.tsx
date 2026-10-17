@@ -16,6 +16,8 @@ export const Route = createFileRoute("/auth")({
       { name: "description", content: "Sign in to the Rishishwar Industry admin panel and sales CRM." },
       { property: "og:title", content: "Team Sign In — Rishishwar Industry" },
       { property: "og:description", content: "Staff access to enquiries, roles and CRM." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
       { name: "robots", content: "noindex" },
     ],
   }),
