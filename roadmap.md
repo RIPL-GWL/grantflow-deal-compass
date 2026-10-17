@@ -12,3 +12,5 @@
 - [ ] Existing records and users: awaiting original user accounts and data exports.
 - [ ] Programme video: awaiting user-supplied video.
 - [ ] Publish + live AI check on published site: awaiting user's go-ahead to publish.
+- [x] Replace password sign-in and password-based staff creation with email OTP; add verified-owner Super Admin bootstrap.
+- [ ] Complete the first admin sign-in by verifying the emailed code for harsh@rishishwarindustry.in.

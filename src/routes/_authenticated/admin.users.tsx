@@ -1,13 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
-import { useServerFn } from "@tanstack/react-start";
 import { useState } from "react";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ROLE_LABELS, type AppRole } from "@/lib/admin";
-import { createStaffUser } from "@/lib/users.functions";
 
 export const Route = createFileRoute("/_authenticated/admin/users")({
   head: () => ({ meta: [{ title: "Users & Roles — RIPL Admin" }, { name: "robots", content: "noindex" }] }),
@@ -67,10 +65,8 @@ function UsersPage() {
     <div className="space-y-6">
       <div>
         <h1 className="text-2xl font-semibold text-foreground">Users & Roles</h1>
-        <p className="text-sm text-muted-foreground">New sign-ups wait here until you approve them. You can also create accounts directly.</p>
+        <p className="text-sm text-muted-foreground">New email-code sign-ins wait here until you approve them and assign a role.</p>
       </div>
-
-      <CreateUser onDone={refresh} />
 
       <div className="flex flex-wrap gap-2">
         {(["pending", "approved", "rejected"] as const).map((f) => (
@@ -131,41 +127,5 @@ function ApproveControls({ onApprove, onReject, label = "Approve" }: { onApprove
       <Button size="sm" onClick={() => onApprove(role)}>{label}</Button>
       {onReject && <Button size="sm" variant="outline" onClick={onReject}>Reject</Button>}
     </div>
-  );
-}
-
-function CreateUser({ onDone }: { onDone: () => void }) {
-  const create = useServerFn(createStaffUser);
-  const [open, setOpen] = useState(false);
-  const [busy, setBusy] = useState(false);
-  const [f, setF] = useState({ fullName: "", email: "", password: "", role: "sales_executive" as AppRole });
-  if (!open) return <Button onClick={() => setOpen(true)}>+ Create user</Button>;
-  async function submit(e: React.FormEvent) {
-    e.preventDefault();
-    if (f.password.length < 8) { toast.error("Password must be at least 8 characters."); return; }
-    setBusy(true);
-    try {
-      await create({ data: { fullName: f.fullName, email: f.email, password: f.password, roles: [f.role] } });
-      toast.success(`Account created for ${f.email}. Share the password with them securely.`);
-      setF({ fullName: "", email: "", password: "", role: "sales_executive" });
-      setOpen(false);
-      onDone();
-    } catch (err) {
-      toast.error(err instanceof Error ? err.message : "Could not create user");
-    } finally { setBusy(false); }
-  }
-  return (
-    <form onSubmit={submit} className="grid gap-3 rounded-lg border bg-card p-4 md:grid-cols-5">
-      <input required placeholder="Full name" className={field} value={f.fullName} onChange={(e) => setF({ ...f, fullName: e.target.value })} />
-      <input required type="email" placeholder="Email" className={field} value={f.email} onChange={(e) => setF({ ...f, email: e.target.value })} />
-      <input required type="text" placeholder="Password (min 8)" className={field} value={f.password} onChange={(e) => setF({ ...f, password: e.target.value })} />
-      <select className={field} value={f.role} onChange={(e) => setF({ ...f, role: e.target.value as AppRole })}>
-        {ALL_ROLES.map((r) => <option key={r} value={r}>{ROLE_LABELS[r]}</option>)}
-      </select>
-      <div className="flex gap-2">
-        <Button type="submit" disabled={busy}>{busy ? "Creating…" : "Create"}</Button>
-        <Button type="button" variant="outline" onClick={() => setOpen(false)}>Cancel</Button>
-      </div>
-    </form>
   );
 }
