@@ -12,3 +12,4 @@
 - [ ] Existing records and users: awaiting original user accounts and data exports.
 - [ ] Programme video: awaiting user-supplied video.
 - [ ] Publish + live AI check on published site: awaiting user's go-ahead to publish.
+- [ ] Replace password sign-in with email OTP and securely bootstrap the verified owner email as Super Admin.
