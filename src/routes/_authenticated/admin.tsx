@@ -1,5 +1,5 @@
 import { createFileRoute, Link, Outlet, useNavigate } from "@tanstack/react-router";
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { fetchMyRoles, ROLE_LABELS } from "@/lib/admin";
@@ -12,6 +12,7 @@ export const Route = createFileRoute("/_authenticated/admin")({
 function AdminLayout() {
   const { user } = Route.useRouteContext();
   const navigate = useNavigate();
+  const queryClient = useQueryClient();
   const { data: roles = [], isLoading } = useQuery({ queryKey: ["my-roles"], queryFn: fetchMyRoles });
   const isSuper = roles.includes("super_admin");
   const { data: status } = useQuery({
@@ -20,8 +21,10 @@ function AdminLayout() {
   });
 
   async function signOut() {
+    await queryClient.cancelQueries();
+    queryClient.clear();
     await supabase.auth.signOut();
-    navigate({ to: "/auth" });
+    navigate({ to: "/auth", replace: true });
   }
 
   return (
