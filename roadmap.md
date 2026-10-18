@@ -13,4 +13,6 @@
 - [ ] Programme video: awaiting user-supplied video.
 - [ ] Publish + live AI check on published site: awaiting user's go-ahead to publish.
 - [x] Replace password sign-in and password-based staff creation with email OTP; add verified-owner Super Admin bootstrap.
-- [ ] Complete the first admin sign-in by verifying the emailed code for harsh@rishishwarindustry.in.
+- [x] Confirm verified owner account has Super Admin access.
+- [x] Add password login alongside OTP and secure email-based password setup/recovery.
+- [ ] Owner chooses a private password using the emailed recovery link; owner inbox interaction required.

@@ -29,6 +29,7 @@ import { Route as PartnerWithUsRouteImport } from './routes/partner-with-us'
 import { Route as PaymentRouteImport } from './routes/payment'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as RegisterYourStoreRouteImport } from './routes/register-your-store'
+import { Route as ResetPasswordRouteImport } from './routes/reset-password'
 import { Route as RetailerPartnerRouteImport } from './routes/retailer-partner'
 import { Route as ScaleYourStartupRouteImport } from './routes/scale-your-startup'
 import { Route as SitemapRouteImport } from './routes/sitemap'
@@ -165,6 +166,11 @@ const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
 const RegisterYourStoreRoute = RegisterYourStoreRouteImport.update({
   id: '/register-your-store',
   path: '/register-your-store',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResetPasswordRoute = ResetPasswordRouteImport.update({
+  id: '/reset-password',
+  path: '/reset-password',
   getParentRoute: () => rootRouteImport,
 } as any)
 const RetailerPartnerRoute = RetailerPartnerRouteImport.update({
@@ -392,6 +398,7 @@ export interface FileRoutesByFullPath {
   '/payment': typeof PaymentRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/register-your-store': typeof RegisterYourStoreRoute
+  '/reset-password': typeof ResetPasswordRoute
   '/retailer-partner': typeof RetailerPartnerRoute
   '/scale-your-startup': typeof ScaleYourStartupRoute
   '/sitemap': typeof SitemapRoute
@@ -450,6 +457,7 @@ export interface FileRoutesByTo {
   '/payment': typeof PaymentRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/register-your-store': typeof RegisterYourStoreRoute
+  '/reset-password': typeof ResetPasswordRoute
   '/retailer-partner': typeof RetailerPartnerRoute
   '/scale-your-startup': typeof ScaleYourStartupRoute
   '/sitemap': typeof SitemapRoute
@@ -506,6 +514,7 @@ export interface FileRoutesById {
   '/payment': typeof PaymentRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/register-your-store': typeof RegisterYourStoreRoute
+  '/reset-password': typeof ResetPasswordRoute
   '/retailer-partner': typeof RetailerPartnerRoute
   '/scale-your-startup': typeof ScaleYourStartupRoute
   '/sitemap': typeof SitemapRoute
@@ -566,6 +575,7 @@ export interface FileRouteTypes {
     | '/payment'
     | '/privacy-policy'
     | '/register-your-store'
+    | '/reset-password'
     | '/retailer-partner'
     | '/scale-your-startup'
     | '/sitemap'
@@ -624,6 +634,7 @@ export interface FileRouteTypes {
     | '/payment'
     | '/privacy-policy'
     | '/register-your-store'
+    | '/reset-password'
     | '/retailer-partner'
     | '/scale-your-startup'
     | '/sitemap'
@@ -679,6 +690,7 @@ export interface FileRouteTypes {
     | '/payment'
     | '/privacy-policy'
     | '/register-your-store'
+    | '/reset-password'
     | '/retailer-partner'
     | '/scale-your-startup'
     | '/sitemap'
@@ -739,6 +751,7 @@ export interface RootRouteChildren {
   PaymentRoute: typeof PaymentRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   RegisterYourStoreRoute: typeof RegisterYourStoreRoute
+  ResetPasswordRoute: typeof ResetPasswordRoute
   RetailerPartnerRoute: typeof RetailerPartnerRoute
   ScaleYourStartupRoute: typeof ScaleYourStartupRoute
   SitemapRoute: typeof SitemapRoute
@@ -890,6 +903,13 @@ declare module '@tanstack/react-router' {
       path: '/register-your-store'
       fullPath: '/register-your-store'
       preLoaderRoute: typeof RegisterYourStoreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reset-password': {
+      id: '/reset-password'
+      path: '/reset-password'
+      fullPath: '/reset-password'
+      preLoaderRoute: typeof ResetPasswordRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/retailer-partner': {
@@ -1292,6 +1312,7 @@ const rootRouteChildren: RootRouteChildren = {
   PaymentRoute: PaymentRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   RegisterYourStoreRoute: RegisterYourStoreRoute,
+  ResetPasswordRoute: ResetPasswordRoute,
   RetailerPartnerRoute: RetailerPartnerRoute,
   ScaleYourStartupRoute: ScaleYourStartupRoute,
   SitemapRoute: SitemapRoute,
