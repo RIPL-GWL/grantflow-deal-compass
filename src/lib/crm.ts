@@ -62,3 +62,18 @@ export function followupState(at: string | null) {
   if (d.toDateString() === now.toDateString()) return "today" as const;
   return "upcoming" as const;
 }
+
+export type Pipeline = Database["public"]["Tables"]["crm_pipelines"]["Row"];
+export type TeamMember = Database["public"]["Tables"]["sales_team_members"]["Row"];
+
+export async function fetchPipelines(): Promise<Pipeline[]> {
+  const { data, error } = await supabase.from("crm_pipelines").select("*").order("sort_order").order("name");
+  if (error) throw error;
+  return data;
+}
+
+export async function fetchTeam(): Promise<TeamMember[]> {
+  const { data, error } = await supabase.from("sales_team_members").select("*");
+  if (error) throw error;
+  return data;
+}
