@@ -16,7 +16,7 @@ const defaultJourney = (role: string) => [
 const m = (slug: string, name: string, title: string, focus: string[], regions: string[], portrait: number, expertise: Mentor["expertise"], quote: string): Mentor => ({
   slug, name, title, focus, regions, portrait, expertise, quote,
   bio: `${name} brings 15+ years of experience helping founders and businesses with ${focus.slice(0, 3).join(", ").toLowerCase()}. Working with early-stage startups and established companies across industries, ${name.split(" ")[0]} helps them scale, prepare for funding and enter new markets.`,
-  years: "15+", guided: "120+", investments: "35+", countries: String(regions.length * 4),
+  years: "15+", guided: "120+", investments: "35+", countries: "8",
   journey: defaultJourney(focus[0] ?? "business growth"),
 });
 
