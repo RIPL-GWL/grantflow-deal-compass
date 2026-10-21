@@ -1510,7 +1510,7 @@ html .site-footer { --primary: var(--site-primary); }
 @media (width < 40rem) { .programme-app-form { grid-template-columns: 1fr; padding: 16px; } }
 
 /* Admin panel shell — premium dark sidebar, independent of site themes */
-.admin-shell {
+.admin-shell, [data-sidebar="sidebar"][data-mobile="true"] {
   --sidebar: oklch(0.17 0.012 60);
   --sidebar-foreground: oklch(0.86 0.015 80);
   --sidebar-primary: oklch(0.78 0.13 78);
