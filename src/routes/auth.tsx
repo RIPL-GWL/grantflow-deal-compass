@@ -49,10 +49,10 @@ function AuthPage() {
       navigate({ to: safeNext(next), replace: true });
     };
     supabase.auth.getSession().then(({ data }) => {
-      if (data.session && window.location.hash.includes("access_token")) go();
+      if (data.session) go();
     });
     const { data: sub } = supabase.auth.onAuthStateChange((event, session) => {
-      if (session && event === "SIGNED_IN" && window.location.hash.includes("access_token")) go();
+      if (session && event === "SIGNED_IN") go();
     });
     return () => sub.subscription.unsubscribe();
   }, [navigate, next]);
