@@ -1572,3 +1572,22 @@ html .site-footer { --primary: var(--site-primary); }
   --gauge-over: oklch(0.6 0.16 255);
 }
 .crm-drop-active { outline: 2px dashed var(--primary); outline-offset: 2px; }
+
+/* Sharad Purnima home: reuses festival layout with moonlit roles. */
+.sharad-home {
+  --festival-cream: oklch(0.17 0.045 258);
+  --festival-text: oklch(0.97 0.012 90);
+  --festival-red: oklch(0.88 0.08 88);
+  --festival-on-red: oklch(0.17 0.045 258);
+  --festival-gold: oklch(0.9 0.07 88);
+  --festival-line: oklch(0.92 0.03 90 / 30%);
+  --festival-black: oklch(0.12 0.04 258);
+  --festival-red-band: linear-gradient(90deg, oklch(0.22 0.05 258), oklch(0.3 0.06 255), oklch(0.22 0.05 258));
+  color: var(--festival-text);
+}
+.sharad-home .festival-stats { color: var(--festival-text); }
+.sharad-home .festival-guide { background: var(--festival-black); color: var(--festival-text); }
+.sharad-home .festival-guide .festival-backdrop { object-fit: cover; }
+.sharad-home .festival-growth .page-shell, .sharad-home .festival-commitment .page-shell { text-shadow: 0 2px 12px oklch(0.1 0.04 258 / 80%); }
+.sharad-home .festival-commitment { color: var(--festival-text); }
+.sharad-home .festival-capabilities .festival-backdrop { opacity: .35; }
