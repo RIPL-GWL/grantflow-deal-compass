@@ -4,7 +4,7 @@ import { resolve } from "node:path";
 
 const authPage = readFileSync(resolve(process.cwd(), "src/routes/auth.tsx"), "utf8");
 const usersPage = readFileSync(resolve(process.cwd(), "src/routes/_authenticated/admin.users.tsx"), "utf8");
-const bootstrap = readFileSync(resolve(process.cwd(), "drizzle/migrations/0001_restore_signup_trigger_and_employees.sql"), "utf8");
+const bootstrap = readFileSync(resolve(process.cwd(), "drizzle/migrations/0002_restore_signup_trigger.sql"), "utf8");
 
 describe("Team authentication", () => {
   it("uses password sign-in only, with no email code login", () => {

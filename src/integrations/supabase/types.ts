@@ -682,6 +682,39 @@ export type Database = {
         }
         Relationships: []
       }
+      store_network: {
+        Row: {
+          area: string
+          district: string
+          id: string
+          is_visible: boolean
+          sort_order: number
+          state: string
+          stores: number
+          updated_at: string
+        }
+        Insert: {
+          area?: string
+          district: string
+          id?: string
+          is_visible?: boolean
+          sort_order?: number
+          state: string
+          stores?: number
+          updated_at?: string
+        }
+        Update: {
+          area?: string
+          district?: string
+          id?: string
+          is_visible?: boolean
+          sort_order?: number
+          state?: string
+          stores?: number
+          updated_at?: string
+        }
+        Relationships: []
+      }
       stores: {
         Row: {
           address: string | null
