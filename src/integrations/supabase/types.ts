@@ -243,6 +243,36 @@ export type Database = {
           },
         ]
       }
+      crm_pipelines: {
+        Row: {
+          created_at: string
+          description: string | null
+          is_active: boolean
+          key: string
+          members: string[]
+          name: string
+          sort_order: number
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          is_active?: boolean
+          key: string
+          members?: string[]
+          name: string
+          sort_order?: number
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          is_active?: boolean
+          key?: string
+          members?: string[]
+          name?: string
+          sort_order?: number
+        }
+        Relationships: []
+      }
       crm_quotes: {
         Row: {
           created_at: string
@@ -583,6 +613,27 @@ export type Database = {
         }
         Relationships: []
       }
+      sales_team_members: {
+        Row: {
+          manager_id: string | null
+          team_leader_id: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          manager_id?: string | null
+          team_leader_id?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          manager_id?: string | null
+          team_leader_id?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       site_content: {
         Row: {
           data: Json
@@ -712,6 +763,10 @@ export type Database = {
       is_sales_manager: { Args: { _user_id: string }; Returns: boolean }
       is_sales_staff: { Args: { _user_id: string }; Returns: boolean }
       is_staff: { Args: { _user_id: string }; Returns: boolean }
+      leads_team_of: {
+        Args: { _member: string; _viewer: string }
+        Returns: boolean
+      }
     }
     Enums: {
       app_role:
