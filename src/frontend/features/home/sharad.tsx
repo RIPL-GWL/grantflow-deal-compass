@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Building2, Globe, Handshake, Store } from "lucide-react";
-import hero from "@/assets/sharad-hero.jpg";
-import products from "@/assets/sharad-products.jpg";
-import guide from "@/assets/sharad-guide.jpg";
-import growth from "@/assets/sharad-growth.jpg";
-import commitment from "@/assets/sharad-commitment.jpg";
+import hero from "@/assets/sharad-hero.webp";
+import products from "@/assets/sharad-products.webp";
+import guide from "@/assets/sharad-guide.webp";
+import growth from "@/assets/sharad-growth.webp";
+import commitment from "@/assets/sharad-commitment.webp";
 import { Button } from "@/frontend/components/ui/button";
 import { RetailNetworkIndicator, type NetworkSelection } from "@/frontend/components/retail-network-indicator";
 import { useRetailNetwork, networkFigures } from "@/frontend/data/retail-network";
