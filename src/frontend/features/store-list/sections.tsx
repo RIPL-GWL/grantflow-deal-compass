@@ -2,16 +2,17 @@ import { useMemo, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { MapPin, Phone, Search, Store } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
-import { retailNetwork } from "@/frontend/data/retail-network";
+import { useRetailNetwork } from "@/frontend/data/retail-network";
 import type { NetworkSelection } from "@/frontend/components/retail-network-indicator";
 
 type StoreRow = { id: string; name: string; state: string; area: string | null; district: string | null; address: string | null; phone: string | null };
 
 export function StoreList({ initial }: { initial: NetworkSelection }) {
   const [selection, setSelection] = useState(initial);
-  const states = useMemo(() => [...new Set(retailNetwork.map((r) => r.state))].sort(), []);
-  const areas = useMemo(() => [...new Set(retailNetwork.filter((r) => !selection.state || r.state === selection.state).map((r) => r.area))].sort(), [selection.state]);
-  const districts = useMemo(() => [...new Set(retailNetwork.filter((r) => (!selection.state || r.state === selection.state) && (!selection.area || r.area === selection.area)).map((r) => r.district))].sort(), [selection]);
+  const retailNetwork = useRetailNetwork();
+  const states = useMemo(() => [...new Set(retailNetwork.map((r) => r.state))].sort(), [retailNetwork]);
+  const areas = useMemo(() => [...new Set(retailNetwork.filter((r) => !selection.state || r.state === selection.state).map((r) => r.area))].sort(), [selection.state, retailNetwork]);
+  const districts = useMemo(() => [...new Set(retailNetwork.filter((r) => (!selection.state || r.state === selection.state) && (!selection.area || r.area === selection.area)).map((r) => r.district))].sort(), [selection, retailNetwork]);
   const rows = retailNetwork.filter((r) => (!selection.state || r.state === selection.state) && (!selection.area || r.area === selection.area) && (!selection.district || r.district === selection.district));
   const total = rows.reduce((sum, row) => sum + row.stores, 0);
   return <>

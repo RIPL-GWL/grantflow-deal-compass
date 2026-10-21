@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import { MapPin, Store } from "lucide-react";
 import { Link } from "@tanstack/react-router";
-import { retailNetwork } from "@/frontend/data/retail-network";
+import { useRetailNetwork } from "@/frontend/data/retail-network";
 
 export type NetworkSelection = { state: string; area: string; district: string };
 
@@ -11,10 +11,11 @@ export function RetailNetworkIndicator({ selection, onChange, count }: {
   count: number;
 }) {
   const { state, area, district } = selection;
+  const retailNetwork = useRetailNetwork();
 
-  const states = useMemo(() => [...new Set(retailNetwork.map((row) => row.state))].sort(), []);
-  const areas = useMemo(() => [...new Set(retailNetwork.filter((row) => !state || row.state === state).map((row) => row.area))].sort(), [state]);
-  const districts = useMemo(() => [...new Set(retailNetwork.filter((row) => (!state || row.state === state) && (!area || row.area === area)).map((row) => row.district))].sort(), [state, area]);
+  const states = useMemo(() => [...new Set(retailNetwork.map((row) => row.state))].sort(), [retailNetwork]);
+  const areas = useMemo(() => [...new Set(retailNetwork.filter((row) => !state || row.state === state).map((row) => row.area))].sort(), [state, retailNetwork]);
+  const districts = useMemo(() => [...new Set(retailNetwork.filter((row) => (!state || row.state === state) && (!area || row.area === area)).map((row) => row.district))].sort(), [state, area, retailNetwork]);
   const onState = (value: string) => onChange({ state: value, area: "", district: "" });
   const onArea = (value: string) => {
     onChange({ state, area: value, district: "" });
