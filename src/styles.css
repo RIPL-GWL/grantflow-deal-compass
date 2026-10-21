@@ -1524,3 +1524,13 @@ html .site-footer { --primary: var(--site-primary); }
 }
 .admin-shell .admin-main [class*="rounded-lg"][class*="border"] { box-shadow: var(--admin-shadow); }
 .admin-brand-mark { background: linear-gradient(135deg, var(--sidebar-primary), oklch(0.62 0.16 45)); color: var(--sidebar-primary-foreground); }
+.admin-shell .admin-gauge, .admin-gauge {
+  --gauge-face: color-mix(in oklch, var(--card) 92%, var(--foreground));
+  --gauge-rim: color-mix(in oklch, var(--foreground) 25%, transparent);
+  --gauge-ink: var(--foreground);
+  --gauge-muted: var(--muted-foreground);
+  --gauge-mid: oklch(0.78 0.15 75);
+  --gauge-good: oklch(0.65 0.15 150);
+  --gauge-over: oklch(0.6 0.16 255);
+}
+.crm-drop-active { outline: 2px dashed var(--primary); outline-offset: 2px; }
