@@ -1,5 +1,5 @@
 import { createFileRoute, Link, Outlet, useNavigate, useRouterState } from "@tanstack/react-router";
-import { BarChart3, CalendarClock, Contact, ExternalLink, FileText, Inbox, KanbanSquare, LogOut, Rocket, Route as Route_, ShieldCheck, Store, Target, Users, type LucideIcon } from "lucide-react";
+import { BarChart3, CalendarClock, Contact, ExternalLink, FileText, Inbox, KanbanSquare, LogOut, MapPin, Rocket, Route as Route_, ShieldCheck, Store, Target, Users, type LucideIcon } from "lucide-react";
 import { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupContent, SidebarGroupLabel, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
@@ -39,6 +39,7 @@ function AdminLayout() {
       { to: "/admin/contacts", label: "Contacts", icon: Contact },
       { to: "/admin/targets", label: "Targets", icon: Target },
       { to: "/admin/stores", label: "Stores", icon: Store },
+      { to: "/admin/store-network", label: "Store Network", icon: MapPin, show: has(["super_admin", "admin", "store_manager"]) },
       { to: "/admin/routing", label: "Routing", icon: Route_, show: has(["super_admin", "admin", "lead_manager"]) },
       { to: "/admin/reports", label: "Reports", icon: BarChart3 },
     ] },
