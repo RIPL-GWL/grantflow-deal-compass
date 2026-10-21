@@ -10,7 +10,7 @@ const headerDarkLogo = { url: headerDarkLogoSrc };
 import footerLogoSrcAsset from "@/assets/footer-logo.webp.asset.json";
 const footerLogoSrc = footerLogoSrcAsset.url;
 const footerLogo = { url: footerLogoSrc };
-import { isNavratri, useSiteTheme } from "@/frontend/lib/site-theme";
+import { isSeasonal, useSiteTheme } from "@/frontend/lib/site-theme";
 import { Button } from "@/frontend/components/ui/button";
 import { COMPANY } from "@/frontend/content/company";
 import { countries } from "@/frontend/features/global-presence/content";
@@ -30,7 +30,7 @@ export function SiteHeader() {
   const theme = useSiteTheme();
   const pathname = useRouterState({ select: (state) => state.location.pathname });
   return (
-    <header className={`site-header sticky top-0 z-50 border-b border-border backdrop-blur-xl ${isNavratri(theme) ? "site-header-seasonal" : ""}`}>
+    <header className={`site-header sticky top-0 z-50 border-b border-border backdrop-blur-xl ${isSeasonal(theme) ? "site-header-seasonal" : ""}`}>
       <div className="page-shell grid h-[72px] grid-cols-[minmax(0,1fr)_auto] items-center gap-3 sm:flex sm:justify-between sm:gap-6">
         <Link to="/" aria-label="Rishishwar Industry home" className="min-w-0 sm:shrink-0" onClick={() => setOpen(false)}>
           <img src={theme === "light" || theme === "navratri" ? headerLogo.url : headerDarkLogo.url} alt="Rishishwar Industry" width={789} height={214} decoding="async" className="header-logo" />

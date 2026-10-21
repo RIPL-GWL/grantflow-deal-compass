@@ -8,6 +8,7 @@ export function resolveTheme(value: string | null): SiteTheme {
   return siteThemes.find((theme) => theme === value) ?? "navratri";
 }
 export function isNavratri(theme: SiteTheme) { return theme === "navratri"; }
+export function isSeasonal(theme: SiteTheme) { return theme === "navratri" || theme === "sharad"; }
 export function nextSiteTheme(theme: SiteTheme): SiteTheme {
   return siteThemes[(siteThemes.indexOf(theme) + 1) % siteThemes.length] ?? "navratri";
 }

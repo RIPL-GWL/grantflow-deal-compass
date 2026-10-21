@@ -5,6 +5,7 @@ import { HomeNetwork } from "@/frontend/features/home/network";
 import { ServiceGuide } from "@/frontend/features/home/service-guide";
 import { districtFigure, totalStoreFigure } from "@/frontend/data/retail-network";
 import { NavratriHome } from "@/frontend/features/home/navratri";
+import { SharadHome } from "@/frontend/features/home/sharad";
 import { isNavratri, useSiteTheme } from "@/frontend/lib/site-theme";
 import { getSiteShareImage } from "@/lib/site-appearance.functions";
 
@@ -26,7 +27,7 @@ function HomePage() {
     <div className="min-h-screen bg-background">
       <SiteHeader />
       <main>
-        {isNavratri(theme) ? <NavratriHome /> : <>
+        {theme === "sharad" ? <SharadHome /> : isNavratri(theme) ? <NavratriHome /> : <>
         <HomeNetwork />
         <CapabilitiesSection />
         <ServiceGuide />
