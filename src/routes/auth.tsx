@@ -171,7 +171,7 @@ function AuthPage() {
             </form>
           ) : (
             <form onSubmit={verifyCode} className="space-y-4">
-              <p className="text-sm text-muted-foreground">Enter the one-time code sent to <span className="font-medium text-foreground">{email}</span>.</p>
+              <p className="text-sm text-muted-foreground">Check <span className="font-medium text-foreground">{email}</span>: click the sign-in link in the email, or enter the code if one is shown.</p>
               <div className="space-y-1">
                 <Label htmlFor="email-code">One-time code</Label>
                 <Input id="email-code" type="text" inputMode="numeric" autoComplete="one-time-code" pattern="[0-9]{4,8}" minLength={4} maxLength={8} value={code} onChange={(e) => setCode(e.target.value.replace(/\D/g, ""))} required />
