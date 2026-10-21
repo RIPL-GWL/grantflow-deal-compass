@@ -71,7 +71,6 @@ function CrmPage() {
         {(canSeeAll(roles) || leads) && <select className={input + " w-auto"} value={owner} onChange={(e) => setOwner(e.target.value)} aria-label="Salesperson">
           <option value="">Everyone</option>{owners.map((o) => <option key={o} value={o}>{people[o] ?? "Unknown"}</option>)}
         </select>}
-        {manager && <Button variant="outline" asChild><Link to="/admin/pipelines">Manage pipelines</Link></Button>}
         {!roles.includes("viewer") || manager ? <Button onClick={() => setAdding((v) => !v)}>{adding ? "Close" : "New deal"}</Button> : null}
       </div>
       {adding && <NewDeal userId={user.id} canAssign={canAssign} people={assignable} pipelines={pipelines.map((p) => ({ key: p.key, name: p.name }))} defaultPipeline={pipeline || pipelines[0]?.key || "general"} onDone={() => { setAdding(false); qc.invalidateQueries({ queryKey: ["crm-deals"] }); }} />}
