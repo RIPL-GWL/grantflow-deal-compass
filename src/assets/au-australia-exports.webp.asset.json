@@ -1,11 +1,11 @@
 {
+  "version": 1,
   "asset_id": "9a20925f-acf4-4c35-a8d5-920eb1a21459",
-  "content_type": "image/webp",
-  "created_at": "2026-10-14T02:50:22Z",
-  "original_filename": "au-australia-exports.webp",
-  "project_id": "872f1d8e-f56e-4751-88c1-0cba7d4fb5d9",
-  "r2_key": "a/v1/872f1d8e-f56e-4751-88c1-0cba7d4fb5d9/9a20925f-acf4-4c35-a8d5-920eb1a21459/au-australia-exports.webp",
-  "size": 72384,
+  "project_id": "018212c6-6b66-469a-b990-7bfa27341e6b",
   "url": "/__l5e/assets-v1/9a20925f-acf4-4c35-a8d5-920eb1a21459/au-australia-exports.webp",
-  "version": 1
+  "r2_key": "a/v1/018212c6-6b66-469a-b990-7bfa27341e6b/9a20925f-acf4-4c35-a8d5-920eb1a21459/au-australia-exports.webp",
+  "original_filename": "au-australia-exports.webp",
+  "size": 72384,
+  "content_type": "image/webp",
+  "created_at": "2026-10-14T02:50:22Z"
 }

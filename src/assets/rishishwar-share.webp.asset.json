@@ -1,11 +1,11 @@
 {
+  "version": 1,
   "asset_id": "595af9ab-67a0-4c13-a642-1e1fc3fec8ea",
-  "content_type": "image/webp",
-  "created_at": "2026-10-14T02:52:02Z",
-  "original_filename": "rishishwar-share.webp",
-  "project_id": "872f1d8e-f56e-4751-88c1-0cba7d4fb5d9",
-  "r2_key": "a/v1/872f1d8e-f56e-4751-88c1-0cba7d4fb5d9/595af9ab-67a0-4c13-a642-1e1fc3fec8ea/rishishwar-share.webp",
-  "size": 8020,
+  "project_id": "018212c6-6b66-469a-b990-7bfa27341e6b",
   "url": "/__l5e/assets-v1/595af9ab-67a0-4c13-a642-1e1fc3fec8ea/rishishwar-share.webp",
-  "version": 1
+  "r2_key": "a/v1/018212c6-6b66-469a-b990-7bfa27341e6b/595af9ab-67a0-4c13-a642-1e1fc3fec8ea/rishishwar-share.webp",
+  "original_filename": "rishishwar-share.webp",
+  "size": 8020,
+  "content_type": "image/webp",
+  "created_at": "2026-10-14T02:52:02Z"
 }

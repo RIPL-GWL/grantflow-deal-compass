@@ -1,11 +1,11 @@
 {
+  "version": 1,
   "asset_id": "1af53ea1-2e27-43fc-8e4d-48df0f65c2d5",
-  "content_type": "image/webp",
-  "created_at": "2026-10-14T02:57:27Z",
-  "original_filename": "food-beverage.webp",
-  "project_id": "872f1d8e-f56e-4751-88c1-0cba7d4fb5d9",
-  "r2_key": "a/v1/872f1d8e-f56e-4751-88c1-0cba7d4fb5d9/1af53ea1-2e27-43fc-8e4d-48df0f65c2d5/food-beverage.webp",
-  "size": 109746,
+  "project_id": "018212c6-6b66-469a-b990-7bfa27341e6b",
   "url": "/__l5e/assets-v1/1af53ea1-2e27-43fc-8e4d-48df0f65c2d5/food-beverage.webp",
-  "version": 1
+  "r2_key": "a/v1/018212c6-6b66-469a-b990-7bfa27341e6b/1af53ea1-2e27-43fc-8e4d-48df0f65c2d5/food-beverage.webp",
+  "original_filename": "food-beverage.webp",
+  "size": 109746,
+  "content_type": "image/webp",
+  "created_at": "2026-10-14T02:57:27Z"
 }

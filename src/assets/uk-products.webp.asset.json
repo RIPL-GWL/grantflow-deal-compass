@@ -1,11 +1,11 @@
 {
+  "version": 1,
   "asset_id": "977064ad-44a8-4717-9a44-32904340aa39",
-  "content_type": "image/webp",
-  "created_at": "2026-10-14T02:52:46Z",
-  "original_filename": "uk-products.webp",
-  "project_id": "872f1d8e-f56e-4751-88c1-0cba7d4fb5d9",
-  "r2_key": "a/v1/872f1d8e-f56e-4751-88c1-0cba7d4fb5d9/977064ad-44a8-4717-9a44-32904340aa39/uk-products.webp",
-  "size": 150298,
+  "project_id": "018212c6-6b66-469a-b990-7bfa27341e6b",
   "url": "/__l5e/assets-v1/977064ad-44a8-4717-9a44-32904340aa39/uk-products.webp",
-  "version": 1
+  "r2_key": "a/v1/018212c6-6b66-469a-b990-7bfa27341e6b/977064ad-44a8-4717-9a44-32904340aa39/uk-products.webp",
+  "original_filename": "uk-products.webp",
+  "size": 150298,
+  "content_type": "image/webp",
+  "created_at": "2026-10-14T02:52:46Z"
 }

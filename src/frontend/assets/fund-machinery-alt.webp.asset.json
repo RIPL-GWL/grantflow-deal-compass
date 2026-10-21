@@ -1,11 +1,11 @@
 {
+  "version": 1,
   "asset_id": "ba929e40-90c5-45d3-b960-6d7b0aee12b3",
-  "content_type": "image/webp",
-  "created_at": "2026-10-14T02:53:24Z",
-  "original_filename": "fund-machinery-alt.webp",
-  "project_id": "872f1d8e-f56e-4751-88c1-0cba7d4fb5d9",
-  "r2_key": "a/v1/872f1d8e-f56e-4751-88c1-0cba7d4fb5d9/ba929e40-90c5-45d3-b960-6d7b0aee12b3/fund-machinery-alt.webp",
-  "size": 85090,
+  "project_id": "018212c6-6b66-469a-b990-7bfa27341e6b",
   "url": "/__l5e/assets-v1/ba929e40-90c5-45d3-b960-6d7b0aee12b3/fund-machinery-alt.webp",
-  "version": 1
+  "r2_key": "a/v1/018212c6-6b66-469a-b990-7bfa27341e6b/ba929e40-90c5-45d3-b960-6d7b0aee12b3/fund-machinery-alt.webp",
+  "original_filename": "fund-machinery-alt.webp",
+  "size": 85090,
+  "content_type": "image/webp",
+  "created_at": "2026-10-14T02:53:24Z"
 }

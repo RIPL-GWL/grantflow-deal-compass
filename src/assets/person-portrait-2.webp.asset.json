@@ -1,11 +1,11 @@
 {
+  "version": 1,
   "asset_id": "f51a6bfd-f295-4405-8305-c209a38a3f8b",
-  "content_type": "image/webp",
-  "created_at": "2026-10-14T02:51:40Z",
-  "original_filename": "person-portrait-2.webp",
-  "project_id": "872f1d8e-f56e-4751-88c1-0cba7d4fb5d9",
-  "r2_key": "a/v1/872f1d8e-f56e-4751-88c1-0cba7d4fb5d9/f51a6bfd-f295-4405-8305-c209a38a3f8b/person-portrait-2.webp",
-  "size": 6492,
+  "project_id": "018212c6-6b66-469a-b990-7bfa27341e6b",
   "url": "/__l5e/assets-v1/f51a6bfd-f295-4405-8305-c209a38a3f8b/person-portrait-2.webp",
-  "version": 1
+  "r2_key": "a/v1/018212c6-6b66-469a-b990-7bfa27341e6b/f51a6bfd-f295-4405-8305-c209a38a3f8b/person-portrait-2.webp",
+  "original_filename": "person-portrait-2.webp",
+  "size": 6492,
+  "content_type": "image/webp",
+  "created_at": "2026-10-14T02:51:40Z"
 }

@@ -1,11 +1,11 @@
 {
+  "version": 1,
   "asset_id": "1bc2700f-16fd-4f92-8263-54e99ffeab07",
-  "content_type": "image/webp",
-  "created_at": "2026-10-14T02:51:52Z",
-  "original_filename": "ripl-startup-enterprise.webp",
-  "project_id": "872f1d8e-f56e-4751-88c1-0cba7d4fb5d9",
-  "r2_key": "a/v1/872f1d8e-f56e-4751-88c1-0cba7d4fb5d9/1bc2700f-16fd-4f92-8263-54e99ffeab07/ripl-startup-enterprise.webp",
-  "size": 74360,
+  "project_id": "018212c6-6b66-469a-b990-7bfa27341e6b",
   "url": "/__l5e/assets-v1/1bc2700f-16fd-4f92-8263-54e99ffeab07/ripl-startup-enterprise.webp",
-  "version": 1
+  "r2_key": "a/v1/018212c6-6b66-469a-b990-7bfa27341e6b/1bc2700f-16fd-4f92-8263-54e99ffeab07/ripl-startup-enterprise.webp",
+  "original_filename": "ripl-startup-enterprise.webp",
+  "size": 74360,
+  "content_type": "image/webp",
+  "created_at": "2026-10-14T02:51:52Z"
 }
