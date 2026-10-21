@@ -18,3 +18,4 @@
 - Keep team authentication on Cloud Auth with password sign-in and email+password signup (no email OTP or sign-in links); new accounts need admin approval; password reset uses a public recovery-link page, because emailed sign-in links proved unreliable and Cloud stores password hashes.
 - Grant the first Super Admin role only after the fixed owner email is verified server-side, because client-supplied identity or roles must never authorize access.
 - Public store network figures come from the admin-managed store_network table (visible rows with stores > 0); the bundled JSON is only a pre-load fallback, so keep its default hidden-state filter in sync.
+- media-library/ holds optimized WebP backup copies of every site image; the app still loads images via .asset.json pointers, so refresh the library when images change.
