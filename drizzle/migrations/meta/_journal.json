@@ -15,6 +15,13 @@
       "when": 1792599439289,
       "tag": "0001_store_network",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1792599611710,
+      "tag": "0002_restore_signup_trigger",
+      "breakpoints": true
     }
   ]
 }
