@@ -327,6 +327,14 @@ html.light .singapore-page {
   --color-ring: var(--ring);
   --color-ink: var(--ink);
   --color-ink-foreground: var(--ink-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
   --font-display: "Archivo", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "Barlow", ui-sans-serif, system-ui, sans-serif;
 }
@@ -1500,3 +1508,19 @@ html .site-footer { --primary: var(--site-primary); }
 .programme-app-advice { margin-top: 16px; padding: 18px; border-left: 4px solid var(--programme-gold, var(--primary)); background: var(--muted); border-radius: 8px; font-size: 14px; line-height: 1.6; }
 .programme-app-advice small { display: block; margin-top: 12px; color: var(--muted-foreground); }
 @media (width < 40rem) { .programme-app-form { grid-template-columns: 1fr; padding: 16px; } }
+
+/* Admin panel shell — premium dark sidebar, independent of site themes */
+.admin-shell, [data-sidebar="sidebar"][data-mobile="true"] {
+  --sidebar: oklch(0.17 0.012 60);
+  --sidebar-foreground: oklch(0.86 0.015 80);
+  --sidebar-primary: oklch(0.78 0.13 78);
+  --sidebar-primary-foreground: oklch(0.17 0.012 60);
+  --sidebar-accent: oklch(0.25 0.018 60);
+  --sidebar-accent-foreground: oklch(0.97 0.01 85);
+  --sidebar-border: oklch(0.3 0.02 60);
+  --sidebar-ring: oklch(0.78 0.13 78);
+  --admin-gold: oklch(0.78 0.13 78);
+  --admin-shadow: 0 1px 2px oklch(0.2 0.01 60 / 6%), 0 8px 24px -12px oklch(0.2 0.01 60 / 18%);
+}
+.admin-shell .admin-main [class*="rounded-lg"][class*="border"] { box-shadow: var(--admin-shadow); }
+.admin-brand-mark { background: linear-gradient(135deg, var(--sidebar-primary), oklch(0.62 0.16 45)); color: var(--sidebar-primary-foreground); }
