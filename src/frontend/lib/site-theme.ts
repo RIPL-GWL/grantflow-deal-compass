@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 
-export const siteThemes = ["navratri", "dark", "light"] as const;
+export const siteThemes = ["navratri", "dark", "light", "sharad"] as const;
 export type SiteTheme = typeof siteThemes[number];
-export const themeLabels: Record<SiteTheme, string> = { navratri: "Navratri Light", dark: "Dark", light: "Light" };
+export const themeLabels: Record<SiteTheme, string> = { navratri: "Navratri Light", dark: "Dark", light: "Light", sharad: "Sharad Purnima" };
 export function resolveTheme(value: string | null): SiteTheme {
   if (value === "navratri-dark" || value === "bome" || value === "moonlight") return "dark";
   return siteThemes.find((theme) => theme === value) ?? "navratri";

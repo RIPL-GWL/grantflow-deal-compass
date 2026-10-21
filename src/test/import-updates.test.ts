@@ -5,7 +5,7 @@ import { HIDDEN_PAGES_LIVE, lockHiddenPage } from "@/frontend/lib/hidden-pages";
 
 describe("imported site navigation and themes", () => {
   it("offers only three themes while recovering removed saved selections", () => {
-    expect(siteThemes).toEqual(["navratri", "dark", "light"]);
+    expect(siteThemes).toEqual(["navratri", "dark", "light", "sharad"]);
     expect(resolveTheme("navratri-dark")).toBe("dark");
     expect(resolveTheme("bome")).toBe("dark");
     expect(resolveTheme("moonlight")).toBe("dark");
