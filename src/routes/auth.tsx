@@ -1,5 +1,5 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { z } from "zod";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
@@ -40,6 +40,24 @@ function AuthPage() {
   const [password, setPassword] = useState("");
   const [resetSent, setResetSent] = useState(false);
 
+  // Email sign-in link: when the user returns from the link, a session appears — continue to the admin area.
+  useEffect(() => {
+    let done = false;
+    const go = () => {
+      if (done) return;
+      done = true;
+      navigate({ to: safeNext(next), replace: true });
+    };
+    supabase.auth.getSession().then(({ data }) => {
+      if (data.session) go();
+    });
+    const { data: sub } = supabase.auth.onAuthStateChange((event, session) => {
+      if (session && event === "SIGNED_IN") go();
+    });
+    return () => sub.subscription.unsubscribe();
+  }, [navigate, next]);
+
+
   async function signInWithPassword(e: React.FormEvent) {
     e.preventDefault();
     setBusy(true);
@@ -78,7 +96,10 @@ function AuthPage() {
     try {
       const { error } = await supabase.auth.signInWithOtp({
         email: normalizedEmail,
-        options: { shouldCreateUser: true },
+        options: {
+          shouldCreateUser: true,
+          emailRedirectTo: `${window.location.origin}/auth?next=${encodeURIComponent(safeNext(next))}`,
+        },
       });
       if (error) throw error;
       setEmail(normalizedEmail);
@@ -150,7 +171,7 @@ function AuthPage() {
             </form>
           ) : (
             <form onSubmit={verifyCode} className="space-y-4">
-              <p className="text-sm text-muted-foreground">Enter the one-time code sent to <span className="font-medium text-foreground">{email}</span>.</p>
+              <p className="text-sm text-muted-foreground">Check <span className="font-medium text-foreground">{email}</span>: click the sign-in link in the email, or enter the code if one is shown.</p>
               <div className="space-y-1">
                 <Label htmlFor="email-code">One-time code</Label>
                 <Input id="email-code" type="text" inputMode="numeric" autoComplete="one-time-code" pattern="[0-9]{4,8}" minLength={4} maxLength={8} value={code} onChange={(e) => setCode(e.target.value.replace(/\D/g, ""))} required />
