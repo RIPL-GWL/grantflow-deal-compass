@@ -7,12 +7,11 @@ const usersPage = readFileSync(resolve(process.cwd(), "src/routes/_authenticated
 const bootstrap = readFileSync(resolve(process.cwd(), "drizzle/migrations/0001_restore_signup_trigger_and_employees.sql"), "utf8");
 
 describe("Team authentication", () => {
-  it("keeps email OTP alongside password sign-in", () => {
-    expect(authPage).toContain("signInWithOtp");
-    expect(authPage).toContain('type: "email"');
-    expect(authPage).toContain("verifyOtp");
+  it("uses password sign-in only, with no email code login", () => {
     expect(authPage).toContain("signInWithPassword");
     expect(authPage).toContain("resetPasswordForEmail");
+    expect(authPage).not.toContain("signInWithOtp");
+    expect(authPage).not.toContain("verifyOtp");
   });
 
   it("does not create staff accounts with passwords", () => {
@@ -25,7 +24,4 @@ describe("Team authentication", () => {
     expect(bootstrap).toContain("EXECUTE FUNCTION public.handle_new_user()");
   });
 
-  it("sends email sign-in links back to the sign-in page", () => {
-    expect(authPage).toContain("emailRedirectTo: `${window.location.origin}/auth?next=");
-  });
 });
