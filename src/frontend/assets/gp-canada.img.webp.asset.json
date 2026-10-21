@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "63dfe827-ecb0-4cd1-b3c6-94dc4f469a3a",
-  "project_id": "018212c6-6b66-469a-b990-7bfa27341e6b",
-  "url": "/__l5e/assets-v1/63dfe827-ecb0-4cd1-b3c6-94dc4f469a3a/gp-canada.img.webp",
-  "r2_key": "a/v1/018212c6-6b66-469a-b990-7bfa27341e6b/63dfe827-ecb0-4cd1-b3c6-94dc4f469a3a/gp-canada.img.webp",
-  "original_filename": "gp-canada.img.webp",
-  "size": 203664,
   "content_type": "image/webp",
-  "created_at": "2026-10-14T02:56:47Z"
+  "created_at": "2026-10-14T02:56:47Z",
+  "original_filename": "gp-canada.img.webp",
+  "project_id": "872f1d8e-f56e-4751-88c1-0cba7d4fb5d9",
+  "r2_key": "a/v1/872f1d8e-f56e-4751-88c1-0cba7d4fb5d9/63dfe827-ecb0-4cd1-b3c6-94dc4f469a3a/gp-canada.img.webp",
+  "size": 203664,
+  "url": "/__l5e/assets-v1/63dfe827-ecb0-4cd1-b3c6-94dc4f469a3a/gp-canada.img.webp",
+  "version": 1
 }

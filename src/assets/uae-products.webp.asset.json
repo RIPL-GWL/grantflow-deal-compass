@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "1d8b5da8-9322-4645-a4dc-7f9687c4f0c3",
-  "project_id": "018212c6-6b66-469a-b990-7bfa27341e6b",
-  "url": "/__l5e/assets-v1/1d8b5da8-9322-4645-a4dc-7f9687c4f0c3/uae-products.webp",
-  "r2_key": "a/v1/018212c6-6b66-469a-b990-7bfa27341e6b/1d8b5da8-9322-4645-a4dc-7f9687c4f0c3/uae-products.webp",
-  "original_filename": "uae-products.webp",
-  "size": 86354,
   "content_type": "image/webp",
-  "created_at": "2026-10-14T02:52:42Z"
+  "created_at": "2026-10-14T02:52:42Z",
+  "original_filename": "uae-products.webp",
+  "project_id": "872f1d8e-f56e-4751-88c1-0cba7d4fb5d9",
+  "r2_key": "a/v1/872f1d8e-f56e-4751-88c1-0cba7d4fb5d9/1d8b5da8-9322-4645-a4dc-7f9687c4f0c3/uae-products.webp",
+  "size": 86354,
+  "url": "/__l5e/assets-v1/1d8b5da8-9322-4645-a4dc-7f9687c4f0c3/uae-products.webp",
+  "version": 1
 }

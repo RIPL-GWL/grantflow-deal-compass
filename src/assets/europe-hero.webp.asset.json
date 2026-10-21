@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "0c47129a-fc9c-473d-b766-afdd00008783",
-  "project_id": "018212c6-6b66-469a-b990-7bfa27341e6b",
-  "url": "/__l5e/assets-v1/0c47129a-fc9c-473d-b766-afdd00008783/europe-hero.webp",
-  "r2_key": "a/v1/018212c6-6b66-469a-b990-7bfa27341e6b/0c47129a-fc9c-473d-b766-afdd00008783/europe-hero.webp",
-  "original_filename": "europe-hero.webp",
-  "size": 162088,
   "content_type": "image/webp",
-  "created_at": "2026-10-14T02:50:32Z"
+  "created_at": "2026-10-14T02:50:32Z",
+  "original_filename": "europe-hero.webp",
+  "project_id": "872f1d8e-f56e-4751-88c1-0cba7d4fb5d9",
+  "r2_key": "a/v1/872f1d8e-f56e-4751-88c1-0cba7d4fb5d9/0c47129a-fc9c-473d-b766-afdd00008783/europe-hero.webp",
+  "size": 162088,
+  "url": "/__l5e/assets-v1/0c47129a-fc9c-473d-b766-afdd00008783/europe-hero.webp",
+  "version": 1
 }

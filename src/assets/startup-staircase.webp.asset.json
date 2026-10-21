@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "b6491b85-c4ea-43f7-8ca0-cb21ed340e0e",
-  "project_id": "018212c6-6b66-469a-b990-7bfa27341e6b",
-  "url": "/__l5e/assets-v1/b6491b85-c4ea-43f7-8ca0-cb21ed340e0e/startup-staircase.webp",
-  "r2_key": "a/v1/018212c6-6b66-469a-b990-7bfa27341e6b/b6491b85-c4ea-43f7-8ca0-cb21ed340e0e/startup-staircase.webp",
-  "original_filename": "startup-staircase.webp",
-  "size": 153644,
   "content_type": "image/webp",
-  "created_at": "2026-10-14T02:52:18Z"
+  "created_at": "2026-10-14T02:52:18Z",
+  "original_filename": "startup-staircase.webp",
+  "project_id": "872f1d8e-f56e-4751-88c1-0cba7d4fb5d9",
+  "r2_key": "a/v1/872f1d8e-f56e-4751-88c1-0cba7d4fb5d9/b6491b85-c4ea-43f7-8ca0-cb21ed340e0e/startup-staircase.webp",
+  "size": 153644,
+  "url": "/__l5e/assets-v1/b6491b85-c4ea-43f7-8ca0-cb21ed340e0e/startup-staircase.webp",
+  "version": 1
 }

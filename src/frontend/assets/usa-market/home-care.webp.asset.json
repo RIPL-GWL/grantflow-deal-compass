@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "34087a04-095e-4cbf-8fbd-8fead3f2d4ed",
-  "project_id": "018212c6-6b66-469a-b990-7bfa27341e6b",
-  "url": "/__l5e/assets-v1/34087a04-095e-4cbf-8fbd-8fead3f2d4ed/home-care.webp",
-  "r2_key": "a/v1/018212c6-6b66-469a-b990-7bfa27341e6b/34087a04-095e-4cbf-8fbd-8fead3f2d4ed/home-care.webp",
-  "original_filename": "home-care.webp",
-  "size": 129436,
   "content_type": "image/webp",
-  "created_at": "2026-10-14T02:57:31Z"
+  "created_at": "2026-10-14T02:57:31Z",
+  "original_filename": "home-care.webp",
+  "project_id": "872f1d8e-f56e-4751-88c1-0cba7d4fb5d9",
+  "r2_key": "a/v1/872f1d8e-f56e-4751-88c1-0cba7d4fb5d9/34087a04-095e-4cbf-8fbd-8fead3f2d4ed/home-care.webp",
+  "size": 129436,
+  "url": "/__l5e/assets-v1/34087a04-095e-4cbf-8fbd-8fead3f2d4ed/home-care.webp",
+  "version": 1
 }

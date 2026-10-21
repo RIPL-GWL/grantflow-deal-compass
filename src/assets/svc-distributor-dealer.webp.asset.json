@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "60cbcd5f-6121-4555-a90c-c4c7ccd448b7",
-  "project_id": "018212c6-6b66-469a-b990-7bfa27341e6b",
-  "url": "/__l5e/assets-v1/60cbcd5f-6121-4555-a90c-c4c7ccd448b7/svc-distributor-dealer.webp",
-  "r2_key": "a/v1/018212c6-6b66-469a-b990-7bfa27341e6b/60cbcd5f-6121-4555-a90c-c4c7ccd448b7/svc-distributor-dealer.webp",
-  "original_filename": "svc-distributor-dealer.webp",
-  "size": 59944,
   "content_type": "image/webp",
-  "created_at": "2026-10-14T02:52:26Z"
+  "created_at": "2026-10-14T02:52:26Z",
+  "original_filename": "svc-distributor-dealer.webp",
+  "project_id": "872f1d8e-f56e-4751-88c1-0cba7d4fb5d9",
+  "r2_key": "a/v1/872f1d8e-f56e-4751-88c1-0cba7d4fb5d9/60cbcd5f-6121-4555-a90c-c4c7ccd448b7/svc-distributor-dealer.webp",
+  "size": 59944,
+  "url": "/__l5e/assets-v1/60cbcd5f-6121-4555-a90c-c4c7ccd448b7/svc-distributor-dealer.webp",
+  "version": 1
 }

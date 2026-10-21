@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "3b2f181a-47c3-4c34-aa5a-c3f5e3253b76",
-  "project_id": "018212c6-6b66-469a-b990-7bfa27341e6b",
-  "url": "/__l5e/assets-v1/3b2f181a-47c3-4c34-aa5a-c3f5e3253b76/svc-partnerships.webp",
-  "r2_key": "a/v1/018212c6-6b66-469a-b990-7bfa27341e6b/3b2f181a-47c3-4c34-aa5a-c3f5e3253b76/svc-partnerships.webp",
-  "original_filename": "svc-partnerships.webp",
-  "size": 82442,
   "content_type": "image/webp",
-  "created_at": "2026-10-14T02:52:36Z"
+  "created_at": "2026-10-14T02:52:36Z",
+  "original_filename": "svc-partnerships.webp",
+  "project_id": "872f1d8e-f56e-4751-88c1-0cba7d4fb5d9",
+  "r2_key": "a/v1/872f1d8e-f56e-4751-88c1-0cba7d4fb5d9/3b2f181a-47c3-4c34-aa5a-c3f5e3253b76/svc-partnerships.webp",
+  "size": 82442,
+  "url": "/__l5e/assets-v1/3b2f181a-47c3-4c34-aa5a-c3f5e3253b76/svc-partnerships.webp",
+  "version": 1
 }

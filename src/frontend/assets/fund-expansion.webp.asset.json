@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "58be44d0-82e5-4ff2-8940-e66da3ab141e",
-  "project_id": "018212c6-6b66-469a-b990-7bfa27341e6b",
-  "url": "/__l5e/assets-v1/58be44d0-82e5-4ff2-8940-e66da3ab141e/fund-expansion.webp",
-  "r2_key": "a/v1/018212c6-6b66-469a-b990-7bfa27341e6b/58be44d0-82e5-4ff2-8940-e66da3ab141e/fund-expansion.webp",
-  "original_filename": "fund-expansion.webp",
-  "size": 89968,
   "content_type": "image/webp",
-  "created_at": "2026-10-14T02:53:13Z"
+  "created_at": "2026-10-14T02:53:13Z",
+  "original_filename": "fund-expansion.webp",
+  "project_id": "872f1d8e-f56e-4751-88c1-0cba7d4fb5d9",
+  "r2_key": "a/v1/872f1d8e-f56e-4751-88c1-0cba7d4fb5d9/58be44d0-82e5-4ff2-8940-e66da3ab141e/fund-expansion.webp",
+  "size": 89968,
+  "url": "/__l5e/assets-v1/58be44d0-82e5-4ff2-8940-e66da3ab141e/fund-expansion.webp",
+  "version": 1
 }
