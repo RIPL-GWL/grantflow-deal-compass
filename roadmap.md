@@ -16,3 +16,5 @@
 - [x] Confirm verified owner account has Super Admin access.
 - [x] Add password login alongside OTP and secure email-based password setup/recovery.
 - [ ] Owner chooses a private password using the emailed recovery link; owner inbox interaction required.
+- [x] Remix: cleared copied Drizzle migrations and scaffolded empty migration set for the new database.
+- [x] Remix: verified schema copied over; restored signup trigger (verified-owner Super Admin bootstrap) and employee master records; verified public enquiry insert works.

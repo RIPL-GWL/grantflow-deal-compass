@@ -8,6 +8,13 @@
       "when": 1792572119941,
       "tag": "0000_init_empty_baseline",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1792572790539,
+      "tag": "0001_restore_signup_trigger_and_employees",
+      "breakpoints": true
     }
   ]
 }
