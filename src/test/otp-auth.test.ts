@@ -10,6 +10,7 @@ describe("Team authentication", () => {
   it("uses password sign-in only, with no email code login", () => {
     expect(authPage).toContain("signInWithPassword");
     expect(authPage).toContain("resetPasswordForEmail");
+    expect(authPage).toContain("supabase.auth.signUp(");
     expect(authPage).not.toContain("signInWithOtp");
     expect(authPage).not.toContain("verifyOtp");
   });
