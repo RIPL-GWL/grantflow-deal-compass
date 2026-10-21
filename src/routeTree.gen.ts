@@ -50,8 +50,10 @@ import { Route as AuthenticatedAdminIndexRouteImport } from './routes/_authentic
 import { Route as AuthenticatedAdminContactsRouteImport } from './routes/_authenticated/admin.contacts'
 import { Route as AuthenticatedAdminContentRouteImport } from './routes/_authenticated/admin.content'
 import { Route as AuthenticatedAdminCrmRouteImport } from './routes/_authenticated/admin.crm'
+import { Route as AuthenticatedAdminDashboardRouteImport } from './routes/_authenticated/admin.dashboard'
 import { Route as AuthenticatedAdminFollowupsRouteImport } from './routes/_authenticated/admin.followups'
 import { Route as AuthenticatedAdminPeopleRouteImport } from './routes/_authenticated/admin.people'
+import { Route as AuthenticatedAdminPipelinesRouteImport } from './routes/_authenticated/admin.pipelines'
 import { Route as AuthenticatedAdminProgrammeRouteImport } from './routes/_authenticated/admin.programme'
 import { Route as AuthenticatedAdminReportsRouteImport } from './routes/_authenticated/admin.reports'
 import { Route as AuthenticatedAdminRoutingRouteImport } from './routes/_authenticated/admin.routing'
@@ -277,6 +279,12 @@ const AuthenticatedAdminCrmRoute = AuthenticatedAdminCrmRouteImport.update({
   path: '/crm',
   getParentRoute: () => AuthenticatedAdminRoute,
 } as any)
+const AuthenticatedAdminDashboardRoute =
+  AuthenticatedAdminDashboardRouteImport.update({
+    id: '/dashboard',
+    path: '/dashboard',
+    getParentRoute: () => AuthenticatedAdminRoute,
+  } as any)
 const AuthenticatedAdminFollowupsRoute =
   AuthenticatedAdminFollowupsRouteImport.update({
     id: '/followups',
@@ -287,6 +295,12 @@ const AuthenticatedAdminPeopleRoute =
   AuthenticatedAdminPeopleRouteImport.update({
     id: '/people',
     path: '/people',
+    getParentRoute: () => AuthenticatedAdminRoute,
+  } as any)
+const AuthenticatedAdminPipelinesRoute =
+  AuthenticatedAdminPipelinesRouteImport.update({
+    id: '/pipelines',
+    path: '/pipelines',
     getParentRoute: () => AuthenticatedAdminRoute,
   } as any)
 const AuthenticatedAdminProgrammeRoute =
@@ -425,8 +439,10 @@ export interface FileRoutesByFullPath {
   '/admin/contacts': typeof AuthenticatedAdminContactsRoute
   '/admin/content': typeof AuthenticatedAdminContentRoute
   '/admin/crm': typeof AuthenticatedAdminCrmRoute
+  '/admin/dashboard': typeof AuthenticatedAdminDashboardRoute
   '/admin/followups': typeof AuthenticatedAdminFollowupsRoute
   '/admin/people': typeof AuthenticatedAdminPeopleRoute
+  '/admin/pipelines': typeof AuthenticatedAdminPipelinesRoute
   '/admin/programme': typeof AuthenticatedAdminProgrammeRoute
   '/admin/reports': typeof AuthenticatedAdminReportsRoute
   '/admin/routing': typeof AuthenticatedAdminRoutingRoute
@@ -481,8 +497,10 @@ export interface FileRoutesByTo {
   '/admin/contacts': typeof AuthenticatedAdminContactsRoute
   '/admin/content': typeof AuthenticatedAdminContentRoute
   '/admin/crm': typeof AuthenticatedAdminCrmRoute
+  '/admin/dashboard': typeof AuthenticatedAdminDashboardRoute
   '/admin/followups': typeof AuthenticatedAdminFollowupsRoute
   '/admin/people': typeof AuthenticatedAdminPeopleRoute
+  '/admin/pipelines': typeof AuthenticatedAdminPipelinesRoute
   '/admin/programme': typeof AuthenticatedAdminProgrammeRoute
   '/admin/reports': typeof AuthenticatedAdminReportsRoute
   '/admin/routing': typeof AuthenticatedAdminRoutingRoute
@@ -543,8 +561,10 @@ export interface FileRoutesById {
   '/_authenticated/admin/contacts': typeof AuthenticatedAdminContactsRoute
   '/_authenticated/admin/content': typeof AuthenticatedAdminContentRoute
   '/_authenticated/admin/crm': typeof AuthenticatedAdminCrmRoute
+  '/_authenticated/admin/dashboard': typeof AuthenticatedAdminDashboardRoute
   '/_authenticated/admin/followups': typeof AuthenticatedAdminFollowupsRoute
   '/_authenticated/admin/people': typeof AuthenticatedAdminPeopleRoute
+  '/_authenticated/admin/pipelines': typeof AuthenticatedAdminPipelinesRoute
   '/_authenticated/admin/programme': typeof AuthenticatedAdminProgrammeRoute
   '/_authenticated/admin/reports': typeof AuthenticatedAdminReportsRoute
   '/_authenticated/admin/routing': typeof AuthenticatedAdminRoutingRoute
@@ -605,8 +625,10 @@ export interface FileRouteTypes {
     | '/admin/contacts'
     | '/admin/content'
     | '/admin/crm'
+    | '/admin/dashboard'
     | '/admin/followups'
     | '/admin/people'
+    | '/admin/pipelines'
     | '/admin/programme'
     | '/admin/reports'
     | '/admin/routing'
@@ -661,8 +683,10 @@ export interface FileRouteTypes {
     | '/admin/contacts'
     | '/admin/content'
     | '/admin/crm'
+    | '/admin/dashboard'
     | '/admin/followups'
     | '/admin/people'
+    | '/admin/pipelines'
     | '/admin/programme'
     | '/admin/reports'
     | '/admin/routing'
@@ -722,8 +746,10 @@ export interface FileRouteTypes {
     | '/_authenticated/admin/contacts'
     | '/_authenticated/admin/content'
     | '/_authenticated/admin/crm'
+    | '/_authenticated/admin/dashboard'
     | '/_authenticated/admin/followups'
     | '/_authenticated/admin/people'
+    | '/_authenticated/admin/pipelines'
     | '/_authenticated/admin/programme'
     | '/_authenticated/admin/reports'
     | '/_authenticated/admin/routing'
@@ -1065,6 +1091,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedAdminCrmRouteImport
       parentRoute: typeof AuthenticatedAdminRoute
     }
+    '/_authenticated/admin/dashboard': {
+      id: '/_authenticated/admin/dashboard'
+      path: '/dashboard'
+      fullPath: '/admin/dashboard'
+      preLoaderRoute: typeof AuthenticatedAdminDashboardRouteImport
+      parentRoute: typeof AuthenticatedAdminRoute
+    }
     '/_authenticated/admin/followups': {
       id: '/_authenticated/admin/followups'
       path: '/followups'
@@ -1077,6 +1110,13 @@ declare module '@tanstack/react-router' {
       path: '/people'
       fullPath: '/admin/people'
       preLoaderRoute: typeof AuthenticatedAdminPeopleRouteImport
+      parentRoute: typeof AuthenticatedAdminRoute
+    }
+    '/_authenticated/admin/pipelines': {
+      id: '/_authenticated/admin/pipelines'
+      path: '/pipelines'
+      fullPath: '/admin/pipelines'
+      preLoaderRoute: typeof AuthenticatedAdminPipelinesRouteImport
       parentRoute: typeof AuthenticatedAdminRoute
     }
     '/_authenticated/admin/programme': {
@@ -1198,8 +1238,10 @@ interface AuthenticatedAdminRouteChildren {
   AuthenticatedAdminContactsRoute: typeof AuthenticatedAdminContactsRoute
   AuthenticatedAdminContentRoute: typeof AuthenticatedAdminContentRoute
   AuthenticatedAdminCrmRoute: typeof AuthenticatedAdminCrmRoute
+  AuthenticatedAdminDashboardRoute: typeof AuthenticatedAdminDashboardRoute
   AuthenticatedAdminFollowupsRoute: typeof AuthenticatedAdminFollowupsRoute
   AuthenticatedAdminPeopleRoute: typeof AuthenticatedAdminPeopleRoute
+  AuthenticatedAdminPipelinesRoute: typeof AuthenticatedAdminPipelinesRoute
   AuthenticatedAdminProgrammeRoute: typeof AuthenticatedAdminProgrammeRoute
   AuthenticatedAdminReportsRoute: typeof AuthenticatedAdminReportsRoute
   AuthenticatedAdminRoutingRoute: typeof AuthenticatedAdminRoutingRoute
@@ -1217,8 +1259,10 @@ const AuthenticatedAdminRouteChildren: AuthenticatedAdminRouteChildren = {
   AuthenticatedAdminContactsRoute: AuthenticatedAdminContactsRoute,
   AuthenticatedAdminContentRoute: AuthenticatedAdminContentRoute,
   AuthenticatedAdminCrmRoute: AuthenticatedAdminCrmRoute,
+  AuthenticatedAdminDashboardRoute: AuthenticatedAdminDashboardRoute,
   AuthenticatedAdminFollowupsRoute: AuthenticatedAdminFollowupsRoute,
   AuthenticatedAdminPeopleRoute: AuthenticatedAdminPeopleRoute,
+  AuthenticatedAdminPipelinesRoute: AuthenticatedAdminPipelinesRoute,
   AuthenticatedAdminProgrammeRoute: AuthenticatedAdminProgrammeRoute,
   AuthenticatedAdminReportsRoute: AuthenticatedAdminReportsRoute,
   AuthenticatedAdminRoutingRoute: AuthenticatedAdminRoutingRoute,
