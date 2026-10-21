@@ -55,6 +55,7 @@ import { Route as AuthenticatedAdminPeopleRouteImport } from './routes/_authenti
 import { Route as AuthenticatedAdminProgrammeRouteImport } from './routes/_authenticated/admin.programme'
 import { Route as AuthenticatedAdminReportsRouteImport } from './routes/_authenticated/admin.reports'
 import { Route as AuthenticatedAdminRoutingRouteImport } from './routes/_authenticated/admin.routing'
+import { Route as AuthenticatedAdminStoreNetworkRouteImport } from './routes/_authenticated/admin.store-network'
 import { Route as AuthenticatedAdminStoresRouteImport } from './routes/_authenticated/admin.stores'
 import { Route as AuthenticatedAdminTargetsRouteImport } from './routes/_authenticated/admin.targets'
 import { Route as AuthenticatedAdminUsersRouteImport } from './routes/_authenticated/admin.users'
@@ -306,6 +307,12 @@ const AuthenticatedAdminRoutingRoute =
     path: '/routing',
     getParentRoute: () => AuthenticatedAdminRoute,
   } as any)
+const AuthenticatedAdminStoreNetworkRoute =
+  AuthenticatedAdminStoreNetworkRouteImport.update({
+    id: '/store-network',
+    path: '/store-network',
+    getParentRoute: () => AuthenticatedAdminRoute,
+  } as any)
 const AuthenticatedAdminStoresRoute =
   AuthenticatedAdminStoresRouteImport.update({
     id: '/stores',
@@ -423,6 +430,7 @@ export interface FileRoutesByFullPath {
   '/admin/programme': typeof AuthenticatedAdminProgrammeRoute
   '/admin/reports': typeof AuthenticatedAdminReportsRoute
   '/admin/routing': typeof AuthenticatedAdminRoutingRoute
+  '/admin/store-network': typeof AuthenticatedAdminStoreNetworkRoute
   '/admin/stores': typeof AuthenticatedAdminStoresRoute
   '/admin/targets': typeof AuthenticatedAdminTargetsRoute
   '/admin/users': typeof AuthenticatedAdminUsersRoute
@@ -478,6 +486,7 @@ export interface FileRoutesByTo {
   '/admin/programme': typeof AuthenticatedAdminProgrammeRoute
   '/admin/reports': typeof AuthenticatedAdminReportsRoute
   '/admin/routing': typeof AuthenticatedAdminRoutingRoute
+  '/admin/store-network': typeof AuthenticatedAdminStoreNetworkRoute
   '/admin/stores': typeof AuthenticatedAdminStoresRoute
   '/admin/targets': typeof AuthenticatedAdminTargetsRoute
   '/admin/users': typeof AuthenticatedAdminUsersRoute
@@ -539,6 +548,7 @@ export interface FileRoutesById {
   '/_authenticated/admin/programme': typeof AuthenticatedAdminProgrammeRoute
   '/_authenticated/admin/reports': typeof AuthenticatedAdminReportsRoute
   '/_authenticated/admin/routing': typeof AuthenticatedAdminRoutingRoute
+  '/_authenticated/admin/store-network': typeof AuthenticatedAdminStoreNetworkRoute
   '/_authenticated/admin/stores': typeof AuthenticatedAdminStoresRoute
   '/_authenticated/admin/targets': typeof AuthenticatedAdminTargetsRoute
   '/_authenticated/admin/users': typeof AuthenticatedAdminUsersRoute
@@ -600,6 +610,7 @@ export interface FileRouteTypes {
     | '/admin/programme'
     | '/admin/reports'
     | '/admin/routing'
+    | '/admin/store-network'
     | '/admin/stores'
     | '/admin/targets'
     | '/admin/users'
@@ -655,6 +666,7 @@ export interface FileRouteTypes {
     | '/admin/programme'
     | '/admin/reports'
     | '/admin/routing'
+    | '/admin/store-network'
     | '/admin/stores'
     | '/admin/targets'
     | '/admin/users'
@@ -715,6 +727,7 @@ export interface FileRouteTypes {
     | '/_authenticated/admin/programme'
     | '/_authenticated/admin/reports'
     | '/_authenticated/admin/routing'
+    | '/_authenticated/admin/store-network'
     | '/_authenticated/admin/stores'
     | '/_authenticated/admin/targets'
     | '/_authenticated/admin/users'
@@ -1087,6 +1100,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedAdminRoutingRouteImport
       parentRoute: typeof AuthenticatedAdminRoute
     }
+    '/_authenticated/admin/store-network': {
+      id: '/_authenticated/admin/store-network'
+      path: '/store-network'
+      fullPath: '/admin/store-network'
+      preLoaderRoute: typeof AuthenticatedAdminStoreNetworkRouteImport
+      parentRoute: typeof AuthenticatedAdminRoute
+    }
     '/_authenticated/admin/stores': {
       id: '/_authenticated/admin/stores'
       path: '/stores'
@@ -1183,6 +1203,7 @@ interface AuthenticatedAdminRouteChildren {
   AuthenticatedAdminProgrammeRoute: typeof AuthenticatedAdminProgrammeRoute
   AuthenticatedAdminReportsRoute: typeof AuthenticatedAdminReportsRoute
   AuthenticatedAdminRoutingRoute: typeof AuthenticatedAdminRoutingRoute
+  AuthenticatedAdminStoreNetworkRoute: typeof AuthenticatedAdminStoreNetworkRoute
   AuthenticatedAdminStoresRoute: typeof AuthenticatedAdminStoresRoute
   AuthenticatedAdminTargetsRoute: typeof AuthenticatedAdminTargetsRoute
   AuthenticatedAdminUsersRoute: typeof AuthenticatedAdminUsersRoute
@@ -1201,6 +1222,7 @@ const AuthenticatedAdminRouteChildren: AuthenticatedAdminRouteChildren = {
   AuthenticatedAdminProgrammeRoute: AuthenticatedAdminProgrammeRoute,
   AuthenticatedAdminReportsRoute: AuthenticatedAdminReportsRoute,
   AuthenticatedAdminRoutingRoute: AuthenticatedAdminRoutingRoute,
+  AuthenticatedAdminStoreNetworkRoute: AuthenticatedAdminStoreNetworkRoute,
   AuthenticatedAdminStoresRoute: AuthenticatedAdminStoresRoute,
   AuthenticatedAdminTargetsRoute: AuthenticatedAdminTargetsRoute,
   AuthenticatedAdminUsersRoute: AuthenticatedAdminUsersRoute,
