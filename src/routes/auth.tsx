@@ -40,6 +40,24 @@ function AuthPage() {
   const [password, setPassword] = useState("");
   const [resetSent, setResetSent] = useState(false);
 
+  // Email sign-in link: when the user returns from the link, a session appears — continue to the admin area.
+  useEffect(() => {
+    let done = false;
+    const go = () => {
+      if (done) return;
+      done = true;
+      navigate({ to: safeNext(next), replace: true });
+    };
+    supabase.auth.getSession().then(({ data }) => {
+      if (data.session && window.location.hash.includes("access_token")) go();
+    });
+    const { data: sub } = supabase.auth.onAuthStateChange((event, session) => {
+      if (session && event === "SIGNED_IN" && window.location.hash.includes("access_token")) go();
+    });
+    return () => sub.subscription.unsubscribe();
+  }, [navigate, next]);
+
+
   async function signInWithPassword(e: React.FormEvent) {
     e.preventDefault();
     setBusy(true);
@@ -78,7 +96,10 @@ function AuthPage() {
     try {
       const { error } = await supabase.auth.signInWithOtp({
         email: normalizedEmail,
-        options: { shouldCreateUser: true },
+        options: {
+          shouldCreateUser: true,
+          emailRedirectTo: `${window.location.origin}/auth?next=${encodeURIComponent(safeNext(next))}`,
+        },
       });
       if (error) throw error;
       setEmail(normalizedEmail);
