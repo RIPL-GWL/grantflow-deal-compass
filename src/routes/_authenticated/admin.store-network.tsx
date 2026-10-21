@@ -47,14 +47,14 @@ function StoreNetworkPage() {
 
   async function setVisible(ids: string[], is_visible: boolean) {
     const { error } = await supabase.from("store_network").update({ is_visible, updated_at: new Date().toISOString() }).in("id", ids);
-    if (error) return toast.error(error.message);
+    if (error) { toast.error(error.message); return; }
     refresh();
   }
   async function saveCount(r: Row) {
     const n = Math.max(0, Math.floor(Number(drafts[r.id])));
-    if (!Number.isFinite(n)) return toast.error("Enter a valid number");
+    if (!Number.isFinite(n)) { toast.error("Enter a valid number"); return; }
     const { error } = await supabase.from("store_network").update({ stores: n, updated_at: new Date().toISOString() }).eq("id", r.id);
-    if (error) return toast.error(error.message);
+    if (error) { toast.error(error.message); return; }
     setDrafts(({ [r.id]: _, ...rest }) => rest);
     toast.success(`${r.district}: ${n} stores saved`);
     refresh();

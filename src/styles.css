@@ -422,6 +422,44 @@ html.moonlight .lux-page {
   --lux-muted: oklch(0.8 0.025 255);
 }
 
+/* Sharad Purnima: moonlit night, pearl-white text, soft lunar gold accents. Optional, never default. */
+html.sharad {
+  color-scheme: dark;
+  --background: oklch(0.2 0.045 255);
+  --foreground: oklch(0.97 0.01 90);
+  --card: oklch(0.25 0.05 255);
+  --card-foreground: oklch(0.97 0.01 90);
+  --popover: oklch(0.25 0.05 255);
+  --popover-foreground: oklch(0.97 0.01 90);
+  --primary: oklch(0.92 0.06 90);
+  --primary-foreground: oklch(0.2 0.045 255);
+  --secondary: oklch(0.29 0.05 255);
+  --secondary-foreground: oklch(0.97 0.01 90);
+  --muted: oklch(0.28 0.045 255);
+  --muted-foreground: oklch(0.82 0.03 240);
+  --accent: oklch(0.34 0.06 255);
+  --accent-foreground: oklch(0.9 0.08 88);
+  --border: oklch(0.92 0.03 90 / 22%);
+  --input: oklch(0.92 0.03 90 / 30%);
+  --ring: oklch(0.92 0.06 90);
+  --ink: oklch(0.15 0.04 255);
+  --ink-foreground: oklch(0.97 0.01 90);
+}
+html.sharad body {
+  background-image:
+    radial-gradient(circle at 88% 6%, oklch(0.98 0.02 90 / 0.28) 0, oklch(0.98 0.02 90 / 0.08) 7%, transparent 22%),
+    radial-gradient(ellipse 70% 40% at 50% -10%, oklch(0.6 0.08 250 / 0.25), transparent 70%);
+  background-attachment: fixed;
+}
+html.sharad .lux-page {
+  --lux-bg: oklch(0.18 0.045 255);
+  --lux-surface: oklch(0.24 0.05 255);
+  --lux-gold: oklch(0.9 0.07 88);
+  --lux-gold-soft: oklch(0.92 0.03 90 / 0.3);
+  --lux-text: oklch(0.97 0.01 90);
+  --lux-muted: oklch(0.82 0.03 240);
+}
+
 /* Dark photographic sections remain readable while surrounding content turns light. */
 html.light .bg-ink,
 html.light .dark-surface {
@@ -930,7 +968,7 @@ textarea.valuation-input { height: 72px; resize: vertical; line-height: 16px; }
   --header-glass: color-mix(in oklch, var(--header-surface) 60%, transparent);
   --header-text: var(--foreground);
 }
-html.navratri, html:not(.dark):not(.light):not(.moonlight):not(.bome) {
+html.navratri, html:not(.dark):not(.light):not(.moonlight):not(.bome):not(.sharad) {
   color-scheme: light;
   --background: var(--festival-cream); --foreground: var(--festival-text);
   --card: oklch(0.995 0.01 85); --card-foreground: var(--foreground);

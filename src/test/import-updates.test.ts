@@ -4,14 +4,16 @@ import { publicPages } from "@/frontend/content/site-pages";
 import { HIDDEN_PAGES_LIVE, lockHiddenPage } from "@/frontend/lib/hidden-pages";
 
 describe("imported site navigation and themes", () => {
-  it("offers only three themes while recovering removed saved selections", () => {
-    expect(siteThemes).toEqual(["navratri", "dark", "light"]);
+  it("offers four themes with Navratri default while recovering removed saved selections", () => {
+    expect(siteThemes).toEqual(["navratri", "dark", "light", "sharad"]);
     expect(resolveTheme("navratri-dark")).toBe("dark");
     expect(resolveTheme("bome")).toBe("dark");
     expect(resolveTheme("moonlight")).toBe("dark");
     expect(nextSiteTheme("navratri")).toBe("dark");
     expect(nextSiteTheme("dark")).toBe("light");
-    expect(nextSiteTheme("light")).toBe("navratri");
+    expect(nextSiteTheme("light")).toBe("sharad");
+    expect(nextSiteTheme("sharad")).toBe("navratri");
+    expect(resolveTheme(null)).toBe("navratri");
     expect(isNavratri("dark")).toBe(false);
   });
   it("lists all new family and startup pages but not Products", () => {
