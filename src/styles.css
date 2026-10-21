@@ -1617,7 +1617,7 @@ html .site-footer { --primary: var(--site-primary); }
   .sharad-home .festival-growth .page-shell { background: transparent; }
   .sharad-home .festival-growth .festival-backdrop { object-position: 75% center; }
   .sharad-home .festival-commitment { min-height: 460px; display: flex; align-items: flex-end; }
-  .sharad-home .festival-commitment .festival-backdrop { object-position: 68% top; }
+  .sharad-home .festival-commitment .festival-backdrop { object-position: 48% top; }
   .sharad-home .festival-commitment::after, .sharad-home .festival-guide::after { background: linear-gradient(0deg, oklch(0.12 0.04 258 / 92%) 15%, transparent 75%); }
   .sharad-home .festival-guide { min-height: 420px; display: flex; align-items: flex-end; }
   .sharad-home .festival-guide .festival-backdrop { opacity: 1; object-position: 85% top; }
