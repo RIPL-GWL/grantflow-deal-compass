@@ -65,6 +65,7 @@ function CrmPage() {
           <h1 className="text-2xl font-semibold text-foreground">Sales Pipeline</h1>
           <p className="text-sm text-muted-foreground">Drag cards between columns to change stage · {canSeeAll(roles) ? "All team deals" : leads ? "You and your team" : "Your deals"} · Open value {inr(shown.filter((d) => !["won", "lost"].includes(d.stage)).reduce((s, d) => s + Number(d.value), 0))}</p>
         </div>
+        <Link to="/admin/pipelines" className="text-sm font-medium text-primary underline-offset-4 hover:underline">Manage pipelines</Link>
         <select className={input + " w-auto"} value={pipeline} onChange={(e) => setPipeline(e.target.value)} aria-label="Pipeline">
           <option value="">All pipelines</option>{pipelines.map((p) => <option key={p.key} value={p.key}>{p.name}</option>)}
         </select>

@@ -1,5 +1,5 @@
 import { createFileRoute, Link, Outlet, useNavigate, useRouterState } from "@tanstack/react-router";
-import { BarChart3, CalendarClock, Contact, ExternalLink, FileText, Inbox, KanbanSquare, LogOut, MapPin, Rocket, Route as Route_, ShieldCheck, Store, Target, Users, type LucideIcon } from "lucide-react";
+import { BarChart3, CalendarClock, Contact, ExternalLink, FileText, Gauge, Inbox, KanbanSquare, LogOut, MapPin, Rocket, Route as Route_, ShieldCheck, Store, Target, Users, Workflow, type LucideIcon } from "lucide-react";
 import { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupContent, SidebarGroupLabel, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
@@ -33,8 +33,10 @@ function AdminLayout() {
   const has = (list: string[]) => roles.some((r) => list.includes(r));
   const groups: { label: string; items: { to: string; label: string; icon: LucideIcon; exact?: boolean; show?: boolean }[] }[] = [
     { label: "Sales", items: [
+      { to: "/admin/dashboard", label: "Dashboard", icon: Gauge },
       { to: "/admin", label: "Enquiries", icon: Inbox, exact: true },
       { to: "/admin/crm", label: "Pipeline", icon: KanbanSquare },
+      { to: "/admin/pipelines", label: "Pipelines & Teams", icon: Workflow },
       { to: "/admin/followups", label: "Follow-ups", icon: CalendarClock },
       { to: "/admin/contacts", label: "Contacts", icon: Contact },
       { to: "/admin/targets", label: "Targets", icon: Target },
