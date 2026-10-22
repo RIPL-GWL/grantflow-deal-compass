@@ -5,7 +5,21 @@ const logoSrc = logoSrcAsset.url;
 const logo = { url: logoSrc };
 import { Button } from "./ui/button";
 import { LanguageSelect } from "./language-select";
-const ChatConversation = lazy(() => import("./ripl-conversation"));
+// Stale tabs after a redeploy can fail to fetch the old chunk; reload once to pick up the new build.
+const ChatConversation = lazy(async () => {
+  try {
+    const m = await import("./ripl-conversation");
+    if (!m?.default) throw new Error("chat module missing");
+    sessionStorage.removeItem("ripl-chat-reload");
+    return m;
+  } catch (e) {
+    if (!sessionStorage.getItem("ripl-chat-reload")) {
+      sessionStorage.setItem("ripl-chat-reload", "1");
+      window.location.reload();
+    }
+    return { default: () => <p className="p-4 text-sm">Chat could not load. Please refresh the page.</p> };
+  }
+});
 export function RiplChat() {
   const [open, setOpen] = useState(false);
   const [language, setLanguage] = useState("");
