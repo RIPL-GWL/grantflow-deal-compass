@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { fetchMyRoles } from "@/lib/admin";
-import { canSeeAll, fetchDeals, fetchPeople, fetchTeam, inr, monthStart } from "@/lib/crm";
+import { canSeeAll, fetchDeals, fetchPeople, fetchTeam, monthStart } from "@/lib/crm";
 import { visibleMembers } from "@/lib/target-gauge";
 import { TargetGauge } from "@/components/admin/target-gauge";
 
@@ -49,11 +49,11 @@ function DashboardPage() {
       ) : (
         <>
           <section className="grid gap-4 md:grid-cols-[auto_1fr] md:items-center">
-            <TargetGauge size="lg" label={members.length > 1 ? "Overall" : "My target"} sub={`${inr(sum(members, wonOf))} of ${inr(sum(members, targetOf))}`} achieved={sum(members, wonOf)} target={sum(members, targetOf)} />
+            <TargetGauge size="lg" label={members.length > 1 ? "Overall" : "My target"} achieved={sum(members, wonOf)} target={sum(members, targetOf)} />
             {leaders.length > 0 && (
               <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
                 {leaders.map((l) => { const ids = teamOf(l); return (
-                  <TargetGauge key={l} label={`Team: ${people[l] ?? "Leader"}`} sub={`${ids.length} people · ${inr(sum(ids, wonOf))} of ${inr(sum(ids, targetOf))}`} achieved={sum(ids, wonOf)} target={sum(ids, targetOf)} />
+                  <TargetGauge key={l} label={`Team: ${people[l] ?? "Leader"}`} sub={`${ids.length} people`} achieved={sum(ids, wonOf)} target={sum(ids, targetOf)} />
                 ); })}
               </div>
             )}
@@ -62,7 +62,7 @@ function DashboardPage() {
             <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-muted-foreground">Each employee</h2>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {members.map((id) => (
-                <TargetGauge key={id} label={people[id] ?? "Unknown"} sub={`${inr(wonOf(id))} of ${inr(targetOf(id))}`} achieved={wonOf(id)} target={targetOf(id)} />
+                <TargetGauge key={id} label={people[id] ?? "Unknown"} achieved={wonOf(id)} target={targetOf(id)} />
               ))}
             </div>
           </section>
