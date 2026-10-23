@@ -1627,12 +1627,12 @@ html .site-footer { --primary: var(--site-primary); }
 @media (max-width: 767px) {
   .festival-process h2, .festival-capabilities h2, .festival-growth h2 { white-space: normal; overflow-wrap: anywhere; font-size: clamp(17px, 5.4vw, 24px); }
   .festival-process .page-shell, .festival-process h2 { max-width: 100%; }
-  .footer-layout { grid-template-columns: repeat(3, minmax(0,1fr)) !important; grid-template-areas: "brand brand brand" "company partnerships family" "startups markets markets" "contact contact contact" !important; gap: 12px 10px !important; padding-block: 16px !important; }
+  .footer-layout { grid-template-columns: repeat(3, minmax(0,1fr)) !important; grid-template-areas: "brand brand brand" "company partnerships family" "markets markets startups" "contact contact contact" !important; gap: 12px 10px !important; padding-block: 16px !important; }
   .footer-family { grid-area: family; } .footer-startups { grid-area: startups; }
   .site-footer h3 { font-size: 11px; margin-bottom: 2px; }
   .site-footer ul { font-size: 11px; line-height: 1.25 !important; margin-top: 4px !important; gap: 0 !important; }
   .site-footer li { margin: 0 !important; }
   .site-footer a { min-height: 22px; }
-  .footer-markets ul { grid-template-columns: repeat(2, minmax(0,1fr)) !important; }
+  .footer-markets ul { grid-template-columns: repeat(4, minmax(0,1fr)) !important; }
   .footer-brand .footer-reach { margin-top: 6px; }
 }
