@@ -19,9 +19,9 @@
 - [ ] Owner chooses a private password using the emailed recovery link; owner inbox interaction required.
 - [x] Remix: cleared copied Drizzle migrations and scaffolded empty migration set for the new database.
 - [x] Remix: verified schema copied over; restored signup trigger (verified-owner Super Admin bootstrap) and employee master records; verified public enquiry insert works.
-- [ ] Mobile footer: Global Markets under Our Family in 2 columns; Startups and Investments in the previous markets position in 4 columns; Contact below.
-- [ ] Make Sharad Purnima the default theme.
-- [ ] Temporarily replace summit registration with the supplied external form while retaining the old form for later.
+- [x] Mobile footer: Global Markets under Our Family in 2 columns; Startups and Investments in the previous markets position in 4 columns; Contact below (393px browser check, no overflow).
+- [x] Make Sharad Purnima the default theme (unit tests and fresh browser visit verified).
+- [x] Temporarily replace summit registration with the supplied external form while retaining the old form for later (embedded fields and external button verified; no test application submitted).
 - [x] Verify "Ask RIPL" chat load fix in browser (opens cleanly, no errors).
 - [x] Fix deal save blocked for custom pipelines (dropped crm_deals_pipeline_check); removed leftover "Test Pipeline QA" pipeline and ₹5,00,000 test target.
 - [x] Re-test drag-and-drop on the Pipeline page in the browser (New → Qualified works, persisted; test deal deleted after).
