@@ -22,5 +22,5 @@
 - [x] Mobile footer: Global Markets 4 columns, Startups and Investments under Our Family.
 - [x] Verify "Ask RIPL" chat load fix in browser (opens cleanly, no errors).
 - [x] Fix deal save blocked for custom pipelines (dropped crm_deals_pipeline_check); removed leftover "Test Pipeline QA" pipeline and ₹5,00,000 test target.
-- [ ] Re-test drag-and-drop on the Pipeline page in the browser.
-- [ ] Refresh media-library backup: optimized WebP copies of every current site image.
+- [x] Re-test drag-and-drop on the Pipeline page in the browser (New → Qualified works, persisted; test deal deleted after).
+- [x] Refresh media-library backup: optimized WebP copies of every current site image (152 files, 13.4 MB, none corrupt).
