@@ -5,12 +5,12 @@ export type SiteTheme = typeof siteThemes[number];
 export const themeLabels: Record<SiteTheme, string> = { navratri: "Navratri Light", dark: "Dark", light: "Light", sharad: "Sharad Purnima" };
 export function resolveTheme(value: string | null): SiteTheme {
   if (value === "navratri-dark" || value === "bome" || value === "moonlight") return "dark";
-  return siteThemes.find((theme) => theme === value) ?? "navratri";
+  return siteThemes.find((theme) => theme === value) ?? "sharad";
 }
 export function isNavratri(theme: SiteTheme) { return theme === "navratri"; }
 export function isSeasonal(theme: SiteTheme) { return theme === "navratri" || theme === "sharad"; }
 export function nextSiteTheme(theme: SiteTheme): SiteTheme {
-  return siteThemes[(siteThemes.indexOf(theme) + 1) % siteThemes.length] ?? "navratri";
+  return siteThemes[(siteThemes.indexOf(theme) + 1) % siteThemes.length] ?? "sharad";
 }
 export function setSiteTheme(theme: SiteTheme) {
   document.documentElement.classList.remove(...siteThemes, "navratri-dark", "bome", "moonlight");
@@ -19,7 +19,7 @@ export function setSiteTheme(theme: SiteTheme) {
   window.dispatchEvent(new CustomEvent("site-theme", { detail: theme }));
 }
 export function useSiteTheme() {
-  const [theme, setTheme] = useState<SiteTheme>("navratri");
+  const [theme, setTheme] = useState<SiteTheme>("sharad");
   useEffect(() => {
     const saved = resolveTheme(sessionStorage.getItem("rishishwar-theme"));
     setSiteTheme(saved);
