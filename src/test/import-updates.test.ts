@@ -4,7 +4,7 @@ import { publicPages } from "@/frontend/content/site-pages";
 import { HIDDEN_PAGES_LIVE, lockHiddenPage } from "@/frontend/lib/hidden-pages";
 
 describe("imported site navigation and themes", () => {
-  it("offers four themes with Navratri default while recovering removed saved selections", () => {
+  it("offers four themes while recovering removed saved selections", () => {
     expect(siteThemes).toEqual(["navratri", "dark", "light", "sharad"]);
     expect(resolveTheme("navratri-dark")).toBe("dark");
     expect(resolveTheme("bome")).toBe("dark");
@@ -13,8 +13,12 @@ describe("imported site navigation and themes", () => {
     expect(nextSiteTheme("dark")).toBe("light");
     expect(nextSiteTheme("light")).toBe("sharad");
     expect(nextSiteTheme("sharad")).toBe("navratri");
-    expect(resolveTheme(null)).toBe("navratri");
     expect(isNavratri("dark")).toBe(false);
+  });
+  it("defaults new visitors and unknown selections to Sharad Purnima", () => {
+    expect(resolveTheme(null)).toBe("sharad");
+    expect(resolveTheme("unknown")).toBe("sharad");
+    expect(resolveTheme("navratri")).toBe("navratri");
   });
   it("lists all new family and startup pages but not Products", () => {
     const paths = publicPages.map(page => page.path);

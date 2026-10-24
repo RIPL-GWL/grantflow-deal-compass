@@ -15,6 +15,7 @@
 - Preserve original IDs when importing future user records; verified identity mapping must control access, never client-submitted roles.
 - Keep programme calculation rules in a browser-safe module with concrete unit tests so registration terms remain consistent.
 - Mount the funding promotion dialog once in the root shell with an explicit allowlist (home + public funding pages); registration links bypass it so applications remain accessible.
+- Keep summit registration presentation separate from the retained internal application form; external registration replacements must preserve the existing form for later reuse.
 - Keep team authentication on Cloud Auth with password sign-in and email+password signup (no email OTP or sign-in links); new accounts need admin approval; password reset uses a public recovery-link page, because emailed sign-in links proved unreliable and Cloud stores password hashes.
 - Grant the first Super Admin role only after the fixed owner email is verified server-side, because client-supplied identity or roles must never authorize access.
 - Public store network figures come from the admin-managed store_network table (visible rows with stores > 0); the bundled JSON is only a pre-load fallback, so keep its default hidden-state filter in sync.

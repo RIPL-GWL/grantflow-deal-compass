@@ -2,7 +2,6 @@ import { Link } from "@tanstack/react-router";
 import { ArrowRight, BriefcaseBusiness, CalendarDays, Car, ChartNoAxesCombined, CheckCircle2, ClipboardCheck, FilePenLine, Globe2, GraduationCap, Handshake, Headphones, Hotel, Lightbulb, MapPin, Mic, Plane, Rocket, ScanSearch, Star, Target, Trophy, Users, Utensils, type LucideIcon } from "lucide-react";
 import { Button } from "@/frontend/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/frontend/components/ui/accordion";
-import { ProgrammeApplicationForm } from "./application-form";
 import heroPhoto from "@/assets/funding-gwalior-hero.webp.asset.json";
 import supportPhotos from "@/assets/funding-support-photos.webp.asset.json";
 import logo from "@/assets/header-wordmark-dark.webp.asset.json";
@@ -13,6 +12,7 @@ import { programmeRules, registrationTotal } from "./rules";
 import { SiteFooter, SiteHeader } from "@/frontend/components/site-chrome";
 const hero = { url: heroPhoto.url };
 const supportPhotoUrl = supportPhotos.url;
+const summitRegistrationUrl = "https://zfrmz.in/ayFvKtNwN5AC4WQybLim";
 import benefit0Asset from "@/assets/funding-programme-benefit-0.webp.asset.json";
 const benefit0 = benefit0Asset.url;
 import benefit1Asset from "@/assets/funding-programme-benefit-1.webp.asset.json";
@@ -106,7 +106,7 @@ export function FundingProgrammePage() {
       <div className="programme-event"><h2 className="programme-band-title">Event Details</h2><div><p><CalendarDays /><span><strong>29 – 31 December 2026</strong><small>(3-Day Summit)</small></span></p><p><MapPin /><strong>Gwalior, Madhya Pradesh, India</strong></p><img src={hero.url} alt="Gwalior summit location" width={1944} height={700} loading="lazy" /><RegisterButton compact /></div></div>
     </section>
     <section className="page-shell programme-section programme-eligibility"><div><Heading>Who Can Apply?</Heading><IconTiles items={eligibility} /><div id="why-participate"><Heading>Why Participate?</Heading></div><IconTiles items={[{ icon: Lightbulb, title: "Funding Opportunities" }, { icon: Users, title: "Mentorship Support" }, { icon: Handshake, title: "Investor Connect" }, { icon: ClipboardCheck, title: "Business Evaluation" }, { icon: Handshake, title: "Strategic Partnerships" }, { icon: Globe2, title: "National Visibility" }]} /></div><div className="programme-platform"><img src={benefit4} alt="Founder presenting a startup to an audience" width={592} height={298} loading="lazy" /><div><h2>A PLATFORM FOR<br /><em>REAL IDEAS,<br />REAL FOUNDERS,</em><br />REAL IMPACT.</h2><RegisterButton compact /></div></div></section>
-    <section id="register" className="page-shell programme-section programme-app"><Heading note="APPLY NOW">Startup <em>Application</em> Form</Heading><p className="programme-app-intro">Apne startup ka idea, stage aur funding need batayein — turant AI se personalised grant eligibility aur investor-funding recommendations paayein. Grant sirf 2 startups ko milega, par investor funding aapko bhi mil sakti hai.</p><ProgrammeApplicationForm /></section>
+    <section id="register" className="page-shell programme-section programme-app"><Heading note="REGISTER NOW">Startup <em>Summit</em> Registration</Heading><Button asChild variant="programme"><a href={summitRegistrationUrl} target="_blank" rel="noopener noreferrer">Open Registration Form <ArrowRight /></a></Button><iframe className="programme-registration-frame" src={summitRegistrationUrl} title="RIPL Startup Funding Programme Summit Registration" loading="lazy" /></section>
     <section id="programme-faq" className="page-shell programme-section"><Heading>Frequently Asked Questions</Heading><div className="programme-faq-layout"><Accordion type="single" collapsible className="programme-faq">{faqs.map(([question, answer], index) => <AccordionItem value={`faq-${index}`} key={question}><AccordionTrigger>{question}</AccordionTrigger><AccordionContent>{answer}</AccordionContent></AccordionItem>)}</Accordion><aside className="programme-help"><Headphones /><h3>Still have questions?</h3><p>Get in touch with our team.</p><Button asChild variant="outline"><Link to="/contact">Contact Us <ArrowRight /></Link></Button></aside></div></section>
     <section className="programme-closing"><img src={hero.url} alt="Gwalior palace at sunset" width={1944} height={700} loading="lazy" /><div className="page-shell"><h2>Ideas Today. Impact Tomorrow.</h2><p>Join the RIPL Startup Funding Programme and take your startup to the next level.</p><RegisterButton /></div></section>
     </main><SiteFooter />
